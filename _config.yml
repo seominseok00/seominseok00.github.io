@@ -1,0 +1,54 @@
+# Setup
+title: 서민석의 블로그
+description: 
+url: https://seominseok00.github.io
+avatar: /zzonddeok.jpg
+paginate: 5
+permalink: pretty
+cover_image: /bg.png
+
+# Gems
+plugins:
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Optimize Jekyll
+exclude:
+  - .editorconfig
+  - .git
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - scripts/
+  - not-pure-poole.gemspec
+
+# Optimize Jekyl SEO Tag
+social:
+  name: Minseok Seo
+  links:
+    - https://github.com/seominseok00
+google_site_verification: xxxxx
+lang: en
+
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Options
+
+# Replace this value and uncomment to enable Google Analytics tracking
+# google_analytics: UA-000000-0
+
+# Replace this value and uncomment to enable Disqus
+# disqus: xxxxxx
+
+# Specify the author for blog posts
+author:
+  name: Minseok Seo
+  url: https://github.com/seominseok00/
+  email: seominseok@gm.gist.ac.kr
