@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="/assets/styles.css"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>[블로그] 3. 네이버, 다음 검색 엔진 등록 | 서민석의 블로그</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="[블로그] 3. 네이버, 다음 검색 엔진 등록" />
+<meta name="author" content="Minseok Seo" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="네이버, 다음 검색 엔진 등록하는 방법 정리" />
+<meta property="og:description" content="네이버, 다음 검색 엔진 등록하는 방법 정리" />
+<link rel="canonical" href="http://localhost:4000/blog/2022/10/17/3.register-search-engine/" />
+<meta property="og:url" content="http://localhost:4000/blog/2022/10/17/3.register-search-engine/" />
+<meta property="og:site_name" content="서민석의 블로그" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-17T00:00:00+09:00" />
+<meta name="google-site-verification" content="xxxxx" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"[블로그] 3. 네이버, 다음 검색 엔진 등록","dateModified":"2022-10-17T00:00:00+09:00","datePublished":"2022-10-17T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2022/10/17/3.register-search-engine/"},"author":{"@type":"Person","name":"Minseok Seo"},"description":"네이버, 다음 검색 엔진 등록하는 방법 정리","url":"http://localhost:4000/blog/2022/10/17/3.register-search-engine/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="서민석의 블로그" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff"></head>
+
+
+  <body>
+
+    <div class="container pure-g"><div class="sidebar-left pure-u-1 pure-u-md-1-4" style="background-color: rgb(40, 73, 77); color: rgb(255, 255, 255); background-image: url(/bg.png);"><header class="masthead">
+  <div class="avatar"><img src="/zzonddeok.jpg" class="avatar-image" alt="Minseok Seo">
+    </div>
+  <div class="masthead-title">
+    <a href="/" title="Home">서민석의 블로그</a>
+  </div>
+  <div class="masthead-tagline">
+    <small></small>
+  </div><nav class="navigation">
+    <ul class="navigation-list"><li class="navigation-item">
+        <a onclick="sessionStorage.setItem('forceCheckScroll', 'true')" href="/">Blog</a>
+      </li><li class="navigation-item">
+        <a onclick="sessionStorage.setItem('forceCheckScroll', 'true')" href="/about/">About</a>
+      </li></ul>
+  </nav><div class="social pure-menu pure-menu-horizontal">
+      <ul class="social-icons pure-menu-list">
+      <li class="pure-menu-item">
+          <a class="social-icon pure-menu-link" href="mailto://seominseok@gm.gist.ac.kr">
+            <i class="fas fa-envelope" title="Email"></i>
+          </a>
+        </li><li class="pure-menu-item">
+          <a class="social-icon pure-menu-link" href="https://github.com/seominseok00">
+            <i class="fab fa-github" title="GitHub"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+</header>
+</div>
+
+      <div class="content pure-u-1 pure-u-md-1-2"><main>
+  <article class="post">
+  <h1 class="post-title">[블로그] 3. 네이버, 다음 검색 엔진 등록</h1>
+  <div class="post-meta"><time datetime="2022-10-17T00:00:00+09:00" itemprop="datePublished">17 Oct 2022</time></div>
+
+  <h3 id="네이버-검색-엔진-등록">네이버 검색 엔진 등록</h3>
+
+<p>네이버 검색 엔진에서 사이트가 검색되도록 하기 위해서는 Google Search Console에 등록했던 것처럼 네이버 서치어드바이저를 등록해야 한다.</p>
+
+<p><a href="https://searchadvisor.naver.com/">네이버 서치어드바이저</a> 👈 이 링크에 들어가서 오른쪽 상단의 웹마스터 도구를 클릭하면, 사이트 등록 페이지가 나타난다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196124683-57783435-f773-4b61-92a1-5f5dd7190f41.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>해당 페이지에서 깃허브 블로그 주소를 넣고 엔터를 클릭한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196125700-dbec0f7c-85f1-4fe0-a811-cc9012dab1ee.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>Google Search Console과 동일하게 html 파일을 업로드하여 소유자를 확인하는 방식이다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196130691-0a966194-9557-4c0f-a426-7a37da338e59.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>파일을 repository 최상위 디렉토리로 옮긴 뒤</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196978459-c92b1312-0199-4f18-bacb-fd54122051f8.png" alt="image" /></p>
+
+<p>아래 git 명령어를 실행한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Register on naver search engine"</span>
+git push origin master
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196131492-3adeb8e7-3a7b-46c7-8bcf-6eb684bfdfc8.png" alt="image" /></p>
+
+<p>이렇게 파일이 업로드 되었다면 3번 사이트 접속시, 404 Not Found 메시지가 안 뜰 것이다.</p>
+
+<p>그러면 아래의 <mark style="background-color: #dcffe4"> 소유 확인 </mark>을 누르면 된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196131892-f40e6a3c-3be8-460c-b772-89d92bca1b9b.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이렇게 등록이 완료되면, 사이트 목록에 있는 사이트 주소를 클릭해 사이트 관리 페이지로 이동한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196132997-b41182ea-3798-4b01-b9d2-70725dce92b4.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이후 왼쪽 사이드바에 있는 요청 -&gt; 웹페이지 수집을 클릭해 <mark style="background-color: #dcffe4"> 확인 </mark> 버튼을 클릭한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196133370-13ae8e37-6403-4d25-b737-ffae60d3620b.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>마지막으로 요청 -&gt; 사이트맵 제출에서 다음과 같이 sitemap.xml을 추가한 뒤 <mark style="background-color: #dcffe4"> 확인 </mark> 버튼을 누르면 끝이다.</p>
+
+<p>![image]</p>
+
+<p><br /></p>
+
+<h3 id="다음-검색-엔진-등록">다음 검색 엔진 등록</h3>
+
+<p><a href="https://register.search.daum.net/index.daum">Daum 검색 등록</a> 👈 다음 검색 등록은 이 링크에서 url을 입력하고 <mark style="background-color: #f5f0ff"> 확인 </mark>을 누르면 된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196975892-5ab7d91a-00e5-4392-92e0-cbb778acaf40.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/197085452-d632a77a-ba34-499e-b259-d1c443a48fbb.png" alt="image" /></p>
+
+<p>서비스 이용 약관에 동의한 뒤, 몇 가지 정보만 작성하면 끝이다 👏</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/197085566-97e3ebee-c434-4ca1-9601-28b5f9feed32.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>➕ 2022/10/21</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/197110043-c7ce7f23-7d97-498a-be37-6df3c9da91fb.png" alt="image" /></p>
+
+<center><i> 하루 뒤에 이메일이 와서 확인해보니 정상적으로 등록된 것을 확인할 수 있었다. </i></center>
+
+
+  
+    <div class="post-tags-section">
+  <i class="post-tags-icon fas fa-tags"></i>
+  <ul class="post-tags"></ul>
+</div>
+
+  
+
+  
+</article>
+
+
+<aside class="related">
+  <h2>Related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/blog/2023/11/14/6.multiple-github-accounts/">
+          [블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기
+          <small><time datetime="2023-11-14T00:00:00+09:00">14 Nov 2023</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/2022/10/28/5.google-adsense/">
+          [블로그] 5. 구글 애드센스 등록
+          <small><time datetime="2022-10-28T00:00:00+09:00">28 Oct 2022</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/2022/10/22/4.local-hosting/">
+          [블로그] 4. 깃허브 블로그 로컬 호스팅
+          <small><time datetime="2022-10-22T00:00:00+09:00">22 Oct 2022</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+
+
+<script src="https://utteranc.es/client.js"
+        repo="seominseok00/comments"
+        issue-term="pathname"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</main>
+
+<footer class="footer"><small>
+    &copy; 2022&nbsp;-&nbsp;2024 <a href="https://github.com/seominseok00/">Minseok Seo</a>. All rights reserved.
+    Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/vszhub/not-pure-poole">Not Pure Poole</a>.
+  </small>
+</footer>
+</div>
+      <div class="sidebar-right pure-u-1 pure-u-md-1-4">
+</div>
+    </div>
+
+    <script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script><script>
+  function strip(str, remove) {
+    while (str.length > 0 && remove.indexOf(str.charAt(0)) != -1) {
+      str = str.substr(1);
+    }
+    while (str.length > 0 && remove.indexOf(str.charAt(str.length - 1)) != -1) {
+      str = str.substr(0, str.length - 1);
+    }
+    return str;
+  }
+
+  function scroll() {
+    console.log('scroll');
+    window.scrollTo({
+      left: 0, 
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+    sessionStorage.removeItem('forceCheckScroll');
+  }
+
+  const forceCheckScroll = sessionStorage.getItem('forceCheckScroll') === 'true';
+  const checkScroll = strip(window.location.pathname, '/') !== strip('', '/');
+
+  if (forceCheckScroll || checkScroll) {
+    const maxWidth = "(max-width: 48rem)";
+    const result = window.matchMedia(maxWidth);
+    if (result.matches) {
+      scroll();
+    } else {
+      result.addListener((match) => {
+        if (match.media == maxWidth) {
+          if (match.matches) {
+            scroll();
+          }
+        }
+      });
+    }
+  }
+</script>
+</body>
+</html>

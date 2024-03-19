@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="/assets/styles.css"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>[블로그] 1.깃허브 블로그 생성 | 서민석의 블로그</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="[블로그] 1.깃허브 블로그 생성" />
+<meta name="author" content="Minseok Seo" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="깃허브 블로그 생성 방법 정리" />
+<meta property="og:description" content="깃허브 블로그 생성 방법 정리" />
+<link rel="canonical" href="http://localhost:4000/blog/2022/10/17/1.github-blog-init/" />
+<meta property="og:url" content="http://localhost:4000/blog/2022/10/17/1.github-blog-init/" />
+<meta property="og:site_name" content="서민석의 블로그" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-17T00:00:00+09:00" />
+<meta name="google-site-verification" content="xxxxx" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"[블로그] 1.깃허브 블로그 생성","dateModified":"2022-10-17T00:00:00+09:00","datePublished":"2022-10-17T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2022/10/17/1.github-blog-init/"},"author":{"@type":"Person","name":"Minseok Seo"},"description":"깃허브 블로그 생성 방법 정리","url":"http://localhost:4000/blog/2022/10/17/1.github-blog-init/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="서민석의 블로그" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff"></head>
+
+
+  <body>
+
+    <div class="container pure-g"><div class="sidebar-left pure-u-1 pure-u-md-1-4" style="background-color: rgb(40, 73, 77); color: rgb(255, 255, 255); background-image: url(/bg.png);"><header class="masthead">
+  <div class="avatar"><img src="/zzonddeok.jpg" class="avatar-image" alt="Minseok Seo">
+    </div>
+  <div class="masthead-title">
+    <a href="/" title="Home">서민석의 블로그</a>
+  </div>
+  <div class="masthead-tagline">
+    <small></small>
+  </div><nav class="navigation">
+    <ul class="navigation-list"><li class="navigation-item">
+        <a onclick="sessionStorage.setItem('forceCheckScroll', 'true')" href="/">Blog</a>
+      </li><li class="navigation-item">
+        <a onclick="sessionStorage.setItem('forceCheckScroll', 'true')" href="/about/">About</a>
+      </li></ul>
+  </nav><div class="social pure-menu pure-menu-horizontal">
+      <ul class="social-icons pure-menu-list">
+      <li class="pure-menu-item">
+          <a class="social-icon pure-menu-link" href="mailto://seominseok@gm.gist.ac.kr">
+            <i class="fas fa-envelope" title="Email"></i>
+          </a>
+        </li><li class="pure-menu-item">
+          <a class="social-icon pure-menu-link" href="https://github.com/seominseok00">
+            <i class="fab fa-github" title="GitHub"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+</header>
+</div>
+
+      <div class="content pure-u-1 pure-u-md-1-2"><main>
+  <article class="post">
+  <h1 class="post-title">[블로그] 1.깃허브 블로그 생성</h1>
+  <div class="post-meta"><time datetime="2022-10-17T00:00:00+09:00" itemprop="datePublished">17 Oct 2022</time></div>
+
+  <p>깃허브 블로그 생성부터 생성부터 자잘한 설정까지 포스팅으로 정리하려고 한다.</p>
+
+<p>❗️해당 포스팅은 m1 맥북을 기준으로 작성되었습니다</p>
+
+<p><br /></p>
+
+<h3 id="깃허브-블로그-테마-다운로드">깃허브 블로그 테마 다운로드</h3>
+
+<p>깃허브 블로그를 생성하려면 우선 남들이 만들어 놓은 무료 테마를 다운로드 해야한다.</p>
+
+<p><a href="https://wiznxt.tistory.com/m/677">Jekyll 지킬 블로그 테마 검색 추천 사이트 - 2022.08.09</a>  👈 여기에서 마음에 드는 테마를 골라 해당 테마의 repository로 이동한다.</p>
+
+<p><em>나는 <a href="https://github.com/mmistakes/minimal-mistakes">minimal mistakes</a>를 골랐다.</em></p>
+
+<p>원래는 해당 repository를 fork해서 사용하면 되지만, 나는 fork말고 다운받아서 사용할 것이다.</p>
+
+<p>fork해서 만들려면 아래 유튜브를 보고 따라하면 된다.</p>
+
+<details>
+  <summary>깃헙(GitHub) 블로그 10분 안에 완성하기</summary>
+  <iframe width="912" height="513" src="https://www.youtube.com/embed/ACzFIAOsfpM" title="깃헙(GitHub) 블로그 10분안에 완성하기" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</details>
+<p><br /><br /></p>
+
+<p>테마를 골랐으면, 해당 테마가 저장된 repository로 가서 <mark style="background-color: #dcffe4"> Code </mark> 버튼을 누른다.</p>
+
+<p>그러면 다음과 같이 링크와 복사할 수 있는 버튼이 나오게 되는데, 버튼을 눌러 해당 링크를 복사한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196064244-c1ac61ce-9a0d-4f77-8cc1-3b78607163b5.png" alt="image" /></p>
+
+<center><i> 테마를 다운받을 때는 오른쪽 상단의 ⭐️ Starred 버튼을 눌러서 개발자에게 감사를 표하자 </i></center>
+
+<p><br /></p>
+
+<p>파일을 다운로드 하기전에 cd 명령어로 해당 파일을 저장할 경로로 이동한다.</p>
+
+<p><em>나는 /Users/seominseok 경로에 다운받았다.</em></p>
+
+<p>이후 터미널 창을 열어 git clone 해서 파일을 다운로드 받는다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/mmistakes/minimal-mistakes.git
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196064391-a74776f4-9a29-41fe-bc14-6bfa3e705654.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>해당 경로로 이동했을 때 이렇게 파일들이 다운로드 됐다면 정상적으로 수행된 것이다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196064537-a462747d-d8a6-4c56-acc1-703f03288025.png" alt="image" /></p>
+
+<p><br /></p>
+
+<h3 id="repository-생성하기">Repository 생성하기</h3>
+
+<p>테마를 다운로드 받았으면, 이제 내 깃허브에서 repository를 생성해야 한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196064651-752d7d48-fd5b-42eb-89d5-c990c44319c6.png" alt="image" /></p>
+
+<p>오른쪽 상단에 있는 <mark style="background-color: #dcffe4"> New </mark> 버튼을 클릭해 새로운 repository를 생성한다.</p>
+
+<p><br /></p>
+
+<p>Repository name 부분에 <strong>깃허브id.github.io</strong>를 작성한다.</p>
+
+<p><em>내 깃허브 id는 seominseok00이기 때문에 seominseok00.github.io로 만들었다.</em></p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196065126-6431a6ec-a213-4745-bff8-3475e42e1202.png" alt="image" />이후 아래 Add a README file을 체크하고, <mark style="background-color: #dcffe4"> Create repository </mark>를 눌러 repository를 생성한다.</p>
+
+<p><br /></p>
+
+<p>repository를 생성하면 다음과 같이 README 파일만 달랑 존재하는 repository가 생성되게 된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196065230-655c6ea6-bbc7-4886-aa1e-e1b043af1397.png" alt="image" /></p>
+
+<p>거의 모든 블로그가 main이 아닌 master branch를 기준으로 설명하기 때문에, main branch를 master로 이름을 변경할 것이다.</p>
+
+<p><mark style="background-color: #dcffe4"> Code </mark> 버튼이 있는 줄의 branch 버튼을 누르면, 아래 화면처럼 디폴트로 설정된 main branch가 나오게 된다.</p>
+
+<p><br /></p>
+
+<p><img width="1624" alt="스크린샷 2022-10-17 오전 9 04 06" src="https://user-images.githubusercontent.com/110466566/196065379-76325fe4-7528-48aa-b0f8-d55e210a2aff.png" /></p>
+
+<p>Default branch 오른쪽 끝에 있는 ✏️ 모양을 클릭하면</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196065593-a17e9407-d88f-4e26-805c-b4c2fc8a0485.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>다음과 같이 변경할 branch 이름을 지정할 수 있다. 이를 master로 변경하고 <mark style="background-color: #dcffe4"> Rename branch </mark>를 클릭하면 끝이다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196065680-bd09e2f1-77fb-4d62-a58d-ba7d1f933f47.png" alt="image" /></p>
+
+<p><br /></p>
+
+<h3 id="github-접속용-ssh-key-생성-및-등록">Github 접속용 SSH Key 생성 및 등록</h3>
+
+<p>SSH Key를 생성하기 전에 먼저 Git을 설치해야 한다 👉 <a href="http://archive.today/6VtyG">맥에서 Git 설치하기</a></p>
+
+<p><br /></p>
+
+<p><strong>SSH Key 생성</strong></p>
+
+<p>터미널에서 깃허브를 관리하기 위해선 SSH Key를 등록해야 하는데, 그 전에 아래 명령어를 실행해서 SSH Key를 생성하자.</p>
+
+<p><em>github email 부분에 깃허브 이메일로 등록된 이메일 주소를 작성하면 된다.</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> <span class="s2">"github email"</span>
+</code></pre></div></div>
+
+<p>그러면 이렇게 Enter file in which to save the key가 나오게 되는데, 엔터를 눌러준다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196065949-a17dbcd9-12b8-4177-a8fd-f52cbf12d966.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이후 Enter passpharse가 나오면 비밀번호를 설정해주면 된다. (앞으로 git 명령어를 사용할 때마다 사용할 비밀번호이니 기억해야 한다)</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196066020-3d51bc74-9098-4a1b-97a3-e94d0fcfa454.png" alt="image" /></p>
+
+<p><em>나는 이전에 생성했었기 때문에 Overwrite 여부를 물어봤다</em></p>
+
+<p><br /></p>
+
+<p>비밀번호 확인까지 진행하면 다음과 같이 SSH Key가 생성되게 된다.</p>
+
+<p>이후 파랑색 박스 표시된 부분의 경로를 복사한 뒤</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196066298-1d0bff5c-6e89-4534-899e-f3cab3272cfe.png" alt="image" /></p>
+
+<p>cat 명령어로 해당 파일 내용을 확인한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /Users/seominseok/.ssh/id_rsa.pub
+</code></pre></div></div>
+
+<p>이후 ssh-rsa로 시작하고 위에서 작성한 이메일 주소로 끝나는 SSH Key를 복사한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196066468-73b9c657-4889-4f2f-b05d-093dd9a0b095.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p><strong>SSH Key 등록</strong></p>
+
+<p>다시 깃허브로 돌아와서 Settings에 들어간다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196066511-f9c83fec-c017-4e8f-9b2e-0f07d1b22076.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>왼쪽 SSH and GPG Keys를 클릭한 뒤, <mark style="background-color: #dcffe4"> New SSH Key </mark>를 클릭한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196066556-290e5bb0-8830-4761-b048-61acf3e5b39b.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이후 아까 복사한 SSH Key를 붙여넣기하면 된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196066657-d6d79748-7d35-412b-bf7a-263837acc1eb.png" alt="image" /></p>
+
+<p><br /></p>
+
+<h3 id="git-초기-설정-및-블로그-생성">Git 초기 설정 및 블로그 생성</h3>
+
+<p><a href="https://seominseok00.github.io/blog/1.github-blog-init/#2-repository-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0">2.Repository 생성하기</a>에서 생성한 repository로 가서 <mark style="background-color: #dcffe4"> Code </mark> 버튼을 클릭한다.</p>
+
+<p>가운데 있는 SSH를 누르고 해당 링크를 복사한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196066921-877d9b93-82d2-4799-9d95-91137cb628b7.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>다시 터미널 창을 켜서 앞으로 블로그 파일을 관리할 경로로 cd 명렁어로 이동한다.</p>
+
+<p>이후 git clone 명령어를 사용해 내 repository를 다운 받는다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:seominseok00/seominseok00.github.io.git
+</code></pre></div></div>
+
+<p><em>git@github.com:seominseok00/seominseok00.github.io.git 이 부분에 복사한 링크를 넣으면 된다</em></p>
+
+<p><br /></p>
+
+<p>git clone 명령어를 실행하면 비밀번호를 입력하라고 나오는데, 이 때 앞서 ssh key를 만들 때 생성한 비밀번호를 입력하면 된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196067156-7256fa1c-0cdb-40f4-802a-b717a231b87a.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이렇게 README 파일만 있는 디렉토리가 생성되면 정상적으로 수행된 것이다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196067238-f7eaeeab-6fad-44fe-8359-2a78c03028e3.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이제 거의 다 했다. 맨 처음 다운받은 깃허브 테마 파일을 모두 복사해서 내 repository 폴더로 복사한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196067350-d7e288d0-81c2-4123-9e17-e3db19ddc91d.png" alt="image" /></p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196067532-b1d072ef-3c81-48d3-ae9c-b2401f868068.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이렇게 파일까지 복사한 뒤 아래 명령어를 순서대로 입력하면 깃허브에 파일이 올라간다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"minimal mistakes"</span>
+git push origin master
+</code></pre></div></div>
+
+<p><em>git push origin master를 입력하면 비밀번호를 입력하라고 나오는데, 이 때도 SSH Key를 생성할 때 만든 비밀번호를 입력하면 된다</em></p>
+
+<p><br /></p>
+
+<p>이후 다시 깃허브 repository에 가보면 이렇게 파일이 업로드 돼 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196069529-e874c9c6-43d9-4a93-835a-fa95f705e414.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>마지막으로 주소창에 <strong>깃허브id.github.io</strong>를 입력하면 이렇게 블로그가 생성된 것을 확인할 수 있다 👏</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196069573-fd879ef6-e699-4b04-b82a-f8389c665692.png" alt="image" /></p>
+
+<p><br /></p>
+
+<h3 id="ds_store-파일-삭제">DS_Store 파일 삭제</h3>
+
+<p>DS_Store 파일은 Desktop Service Store의 약자로, 해당 디렉토리에 대한 메타 데이터가 저장돼 있다.</p>
+
+<p>애플의 맥 OS에서 파인더로 폴더에 접근할 때 자동으로 생기는 파일이기 때문에, git 명령어로 파일을 업로드 할 때마다 해당 파일이 같이 업로드 되게 된다.</p>
+
+<p>먼저 아래 명령어로 해당 디렉토리 아래의 모든 .DS_Store 파일을 제거한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find <span class="nb">.</span> <span class="nt">-name</span> .DS_Store <span class="nt">-print0</span> | xargs <span class="nt">-0</span> git <span class="nb">rm</span> <span class="nt">-f</span> <span class="nt">--ignore-unmatch</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>이후 echo 명령어로 해당 확장자를 가진 파일을 업로드하지 않도록 gitignore 해준다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> .DS_Store <span class="o">&gt;&gt;</span> .gitignore
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>마지막으로 변경 사항을 반영해주면 끝</p>
+
+<pre><code class="language-rbash">git add .
+git commit -m ".DS_Store remove"
+git push origin master
+</code></pre>
+
+
+  
+    <div class="post-tags-section">
+  <i class="post-tags-icon fas fa-tags"></i>
+  <ul class="post-tags"></ul>
+</div>
+
+  
+
+  
+</article>
+
+
+<aside class="related">
+  <h2>Related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/blog/2023/11/14/6.multiple-github-accounts/">
+          [블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기
+          <small><time datetime="2023-11-14T00:00:00+09:00">14 Nov 2023</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/2022/10/28/5.google-adsense/">
+          [블로그] 5. 구글 애드센스 등록
+          <small><time datetime="2022-10-28T00:00:00+09:00">28 Oct 2022</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/2022/10/22/4.local-hosting/">
+          [블로그] 4. 깃허브 블로그 로컬 호스팅
+          <small><time datetime="2022-10-22T00:00:00+09:00">22 Oct 2022</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+
+
+<script src="https://utteranc.es/client.js"
+        repo="seominseok00/comments"
+        issue-term="pathname"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</main>
+
+<footer class="footer"><small>
+    &copy; 2022&nbsp;-&nbsp;2024 <a href="https://github.com/seominseok00/">Minseok Seo</a>. All rights reserved.
+    Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/vszhub/not-pure-poole">Not Pure Poole</a>.
+  </small>
+</footer>
+</div>
+      <div class="sidebar-right pure-u-1 pure-u-md-1-4">
+</div>
+    </div>
+
+    <script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script><script>
+  function strip(str, remove) {
+    while (str.length > 0 && remove.indexOf(str.charAt(0)) != -1) {
+      str = str.substr(1);
+    }
+    while (str.length > 0 && remove.indexOf(str.charAt(str.length - 1)) != -1) {
+      str = str.substr(0, str.length - 1);
+    }
+    return str;
+  }
+
+  function scroll() {
+    console.log('scroll');
+    window.scrollTo({
+      left: 0, 
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+    sessionStorage.removeItem('forceCheckScroll');
+  }
+
+  const forceCheckScroll = sessionStorage.getItem('forceCheckScroll') === 'true';
+  const checkScroll = strip(window.location.pathname, '/') !== strip('', '/');
+
+  if (forceCheckScroll || checkScroll) {
+    const maxWidth = "(max-width: 48rem)";
+    const result = window.matchMedia(maxWidth);
+    if (result.matches) {
+      scroll();
+    } else {
+      result.addListener((match) => {
+        if (match.media == maxWidth) {
+          if (match.matches) {
+            scroll();
+          }
+        }
+      });
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/blog/2022/10/17/1.github-blog-init/</loc>
+<lastmod>2022-10-17T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog/2022/10/17/2.google-search-and-analytics/</loc>
+<lastmod>2022-10-17T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog/2022/10/17/3.register-search-engine/</loc>
+<lastmod>2022-10-17T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog/2022/10/22/4.local-hosting/</loc>
+<lastmod>2022-10-22T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog/2022/10/28/5.google-adsense/</loc>
+<lastmod>2022-10-28T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog/2023/11/14/6.multiple-github-accounts/</loc>
+<lastmod>2023-11-14T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -14,5 +38,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/tags/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page2/</loc>
 </url>
 </urlset>

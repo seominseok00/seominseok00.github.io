@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="/assets/styles.css"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>[블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기 | 서민석의 블로그</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="[블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기" />
+<meta name="author" content="Minseok Seo" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="ssh key 여러 개 등록하는 방법" />
+<meta property="og:description" content="ssh key 여러 개 등록하는 방법" />
+<link rel="canonical" href="http://localhost:4000/blog/2023/11/14/6.multiple-github-accounts/" />
+<meta property="og:url" content="http://localhost:4000/blog/2023/11/14/6.multiple-github-accounts/" />
+<meta property="og:site_name" content="서민석의 블로그" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-11-14T00:00:00+09:00" />
+<meta name="google-site-verification" content="xxxxx" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"[블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기","dateModified":"2023-11-14T00:00:00+09:00","datePublished":"2023-11-14T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2023/11/14/6.multiple-github-accounts/"},"author":{"@type":"Person","name":"Minseok Seo"},"description":"ssh key 여러 개 등록하는 방법","url":"http://localhost:4000/blog/2023/11/14/6.multiple-github-accounts/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="서민석의 블로그" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff"></head>
+
+
+  <body>
+
+    <div class="container pure-g"><div class="sidebar-left pure-u-1 pure-u-md-1-4" style="background-color: rgb(40, 73, 77); color: rgb(255, 255, 255); background-image: url(/bg.png);"><header class="masthead">
+  <div class="avatar"><img src="/zzonddeok.jpg" class="avatar-image" alt="Minseok Seo">
+    </div>
+  <div class="masthead-title">
+    <a href="/" title="Home">서민석의 블로그</a>
+  </div>
+  <div class="masthead-tagline">
+    <small></small>
+  </div><nav class="navigation">
+    <ul class="navigation-list"><li class="navigation-item">
+        <a onclick="sessionStorage.setItem('forceCheckScroll', 'true')" href="/">Blog</a>
+      </li><li class="navigation-item">
+        <a onclick="sessionStorage.setItem('forceCheckScroll', 'true')" href="/about/">About</a>
+      </li></ul>
+  </nav><div class="social pure-menu pure-menu-horizontal">
+      <ul class="social-icons pure-menu-list">
+      <li class="pure-menu-item">
+          <a class="social-icon pure-menu-link" href="mailto://seominseok@gm.gist.ac.kr">
+            <i class="fas fa-envelope" title="Email"></i>
+          </a>
+        </li><li class="pure-menu-item">
+          <a class="social-icon pure-menu-link" href="https://github.com/seominseok00">
+            <i class="fab fa-github" title="GitHub"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+</header>
+</div>
+
+      <div class="content pure-u-1 pure-u-md-1-2"><main>
+  <article class="post">
+  <h1 class="post-title">[블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기</h1>
+  <div class="post-meta"><time datetime="2023-11-14T00:00:00+09:00" itemprop="datePublished">14 Nov 2023</time></div>
+
+  <h3 id="github-접속용-ssh-key-생성-및-등록">Github 접속용 SSH Key 생성 및 등록</h3>
+
+<p>SSH Key를 생성하기 전에 먼저 Git을 설치해야 한다 👉 <a href="http://archive.today/6VtyG">맥에서 Git 설치하기</a></p>
+
+<p><br /></p>
+
+<p><strong>SSH Key 생성</strong></p>
+
+<p>터미널에서 깃허브를 관리하기 위해선 SSH Key를 등록해야 하는데, 그 전에 아래 명령어를 실행해서 SSH Key를 생성하자.</p>
+
+<p><em><code class="language-plaintext highlighter-rouge">github email</code> 부분에 깃허브 이메일로 등록된 이메일 주소를 작성하면 된다.</em></p>
+
+<p><em><code class="language-plaintext highlighter-rouge">id_rsa_alias</code> 부분에는 alias만 변경하면 된다.</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/.ssh
+ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> <span class="s2">"github email"</span> <span class="nt">-f</span> <span class="s2">"id_rsa_alias"</span>
+</code></pre></div></div>
+
+<p><img src="https://github.com/seominseok00/comments/assets/150681724/d7fec7a8-998e-45a7-a463-b7a04dc57932" alt="image" /></p>
+
+<p>Enter passpharse가 나오면 비밀번호를 설정해주면 된다. (앞으로 git 명령어를 사용할 때마다 사용할 비밀번호이니 기억해야 한다)</p>
+
+<p><br /></p>
+
+<p>비밀번호 확인까지 진행하면 다음과 같이 SSH Key가 생성되게 된다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/150681724/a32914ca-656d-40b1-83c8-ff082e2e920c" alt="image" /></p>
+
+<p>우리는 두 개의 아이디를 등록할거기 때문에 이 과정을 한 번 더 해주면 된다.</p>
+
+<p>이때 아래 <code class="language-plaintext highlighter-rouge">github email</code>과 <code class="language-plaintext highlighter-rouge">id_rsa_alias</code>에는 앞서 생성한 것과 다른 이메일과 아이디를 사용해야 한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> <span class="s2">"github email"</span> <span class="nt">-f</span> <span class="s2">"id_rsa_alias"</span>
+</code></pre></div></div>
+
+<p>나는 아래처럼 두 개의 파일을 생성했다. (seominseok, seominseoktech)</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/150681724/960a5fe4-caf9-4259-a323-a1346f18f0a4" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이후 cat 명령어로 해당 파일 내용을 확인한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /Users/seominseok/.ssh/id_rsa_alias.pub
+</code></pre></div></div>
+
+<p>이후 ssh-rsa로 시작하고 위에서 작성한 이메일 주소로 끝나는 SSH Key를 복사한다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/150681724/5296dbd6-eaf0-469e-bced-829aeddaf05e" alt="image" /></p>
+
+<p><br /></p>
+
+<p><strong>SSH Key 등록</strong></p>
+
+<p>다시 깃허브로 돌아와서 Settings에 들어간다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/150681724/f51f3f1e-76fe-49cb-bf78-fbffc708c455" alt="image" /></p>
+
+<p><br /></p>
+
+<p>왼쪽 SSH and GPG Keys를 클릭한 뒤, <mark style="background-color: #dcffe4"> New SSH Key </mark>를 클릭한다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/150681724/1a1e5639-1b96-434b-af28-dd5c1bf4b6d2" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이후 아까 복사한 SSH Key를 붙여넣기하면 된다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/150681724/764358e4-4a42-40b9-aa23-0181bac1b5db" alt="image" /></p>
+
+<p>❗️이때 ssh-keygen으로 생성할 때 입력한 이메일에 해당하는 계정으로 각각 등록해줘야 한다.</p>
+
+<p><br /></p>
+
+<p>이후 vi로 configuration 파일을 수정한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi ~/.ssh/config
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 개인 계정
+Host github.com-alias1
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_alias1
+
+# 업무 계정
+Host github.com-alias2
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_alias2
+</code></pre></div></div>
+
+<p>❗️alias 부분에 ssh-keygen으로 생성시 입력한 값을 넣어야 한다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/150681724/98f2fd03-2ec5-4d2f-8bec-5be606194e49" alt="image" /></p>
+
+<p><br /></p>
+
+<p>저장한 뒤, ssh-add 명령어로 아까 생성한 파일들을 등록한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add ~/.ssh/id_irsa_alias1
+ssh-add ~/.ssh/id_irsa_alias2
+</code></pre></div></div>
+
+<p><img src="https://github.com/seominseok00/comments/assets/150681724/73ee6cf4-1878-4e00-8bd5-63a50aad6ab7" alt="image" /></p>
+
+<p><br /></p>
+
+<p>ssh -T 명령어로 테스트 했을 때 다음과 같이 뜨면 ssh 설정이 완료된 것이다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-T</span> git@github.com-alias1
+ssh <span class="nt">-T</span> git@github.com-alias2
+</code></pre></div></div>
+
+<p><img src="https://github.com/seominseok00/comments/assets/150681724/7c1c6f2d-8058-4f30-858d-88e18f17a649" alt="image" /></p>
+
+<p><br /></p>
+
+<h3 id="ssh로-git-clone-해보기">SSH로 git clone 해보기</h3>
+
+<p><img src="https://github.com/seominseok00/comments/assets/150681724/200b3fca-0c27-4dd7-8f8b-22be2f6ae2ec" alt="image" /></p>
+
+<p>clone할 repository에서 다음과 같이 ssh로 설정하고 복사한다.</p>
+
+<p>그러면 아래와 같은 형식으로 복사될텐데</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git@github.com:깃허브아이디/깃허브리퍼지토리.git
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>해당 repository에 연결할 깃허브 계정의 호스트명(alias1, alias2)으로 다음과 같이 설정하면 된다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git@github.com-alias1:깃허브아이디/깃허브리퍼지토리.git
+</code></pre></div></div>
+
+<p><img src="https://github.com/seominseok00/comments/assets/150681724/4a711d18-e380-40b9-bc98-87acfe05a428" alt="image" /></p>
+
+<p><br /></p>
+
+<p>❗️commit이나 push 하기 전에 다음과 같이 config name, email을 설정한 뒤 푸쉬해야 한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config user.name 아이디
+git config user.email 이메일
+
+# 설정 확인
+git config user.name
+git config user.email
+</code></pre></div></div>
+
+
+  
+    <div class="post-tags-section">
+  <i class="post-tags-icon fas fa-tags"></i>
+  <ul class="post-tags"></ul>
+</div>
+
+  
+
+  
+</article>
+
+
+<aside class="related">
+  <h2>Related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/blog/2022/10/28/5.google-adsense/">
+          [블로그] 5. 구글 애드센스 등록
+          <small><time datetime="2022-10-28T00:00:00+09:00">28 Oct 2022</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/2022/10/22/4.local-hosting/">
+          [블로그] 4. 깃허브 블로그 로컬 호스팅
+          <small><time datetime="2022-10-22T00:00:00+09:00">22 Oct 2022</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/2022/10/17/3.register-search-engine/">
+          [블로그] 3. 네이버, 다음 검색 엔진 등록
+          <small><time datetime="2022-10-17T00:00:00+09:00">17 Oct 2022</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+
+
+<script src="https://utteranc.es/client.js"
+        repo="seominseok00/comments"
+        issue-term="pathname"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</main>
+
+<footer class="footer"><small>
+    &copy; 2022&nbsp;-&nbsp;2024 <a href="https://github.com/seominseok00/">Minseok Seo</a>. All rights reserved.
+    Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/vszhub/not-pure-poole">Not Pure Poole</a>.
+  </small>
+</footer>
+</div>
+      <div class="sidebar-right pure-u-1 pure-u-md-1-4">
+</div>
+    </div>
+
+    <script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script><script>
+  function strip(str, remove) {
+    while (str.length > 0 && remove.indexOf(str.charAt(0)) != -1) {
+      str = str.substr(1);
+    }
+    while (str.length > 0 && remove.indexOf(str.charAt(str.length - 1)) != -1) {
+      str = str.substr(0, str.length - 1);
+    }
+    return str;
+  }
+
+  function scroll() {
+    console.log('scroll');
+    window.scrollTo({
+      left: 0, 
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+    sessionStorage.removeItem('forceCheckScroll');
+  }
+
+  const forceCheckScroll = sessionStorage.getItem('forceCheckScroll') === 'true';
+  const checkScroll = strip(window.location.pathname, '/') !== strip('', '/');
+
+  if (forceCheckScroll || checkScroll) {
+    const maxWidth = "(max-width: 48rem)";
+    const result = window.matchMedia(maxWidth);
+    if (result.matches) {
+      scroll();
+    } else {
+      result.addListener((match) => {
+        if (match.media == maxWidth) {
+          if (match.matches) {
+            scroll();
+          }
+        }
+      });
+    }
+  }
+</script>
+</body>
+</html>

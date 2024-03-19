@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="/assets/styles.css"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>[블로그] 2.구글 검색 엔진, 애널리틱스 등록 | 서민석의 블로그</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="[블로그] 2.구글 검색 엔진, 애널리틱스 등록" />
+<meta name="author" content="Minseok Seo" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="구글 검색 엔진, 애널리틱스 등록하는 방법 정리" />
+<meta property="og:description" content="구글 검색 엔진, 애널리틱스 등록하는 방법 정리" />
+<link rel="canonical" href="http://localhost:4000/blog/2022/10/17/2.google-search-and-analytics/" />
+<meta property="og:url" content="http://localhost:4000/blog/2022/10/17/2.google-search-and-analytics/" />
+<meta property="og:site_name" content="서민석의 블로그" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-17T00:00:00+09:00" />
+<meta name="google-site-verification" content="xxxxx" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"[블로그] 2.구글 검색 엔진, 애널리틱스 등록","dateModified":"2022-10-17T00:00:00+09:00","datePublished":"2022-10-17T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2022/10/17/2.google-search-and-analytics/"},"author":{"@type":"Person","name":"Minseok Seo"},"description":"구글 검색 엔진, 애널리틱스 등록하는 방법 정리","url":"http://localhost:4000/blog/2022/10/17/2.google-search-and-analytics/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="서민석의 블로그" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff"></head>
+
+
+  <body>
+
+    <div class="container pure-g"><div class="sidebar-left pure-u-1 pure-u-md-1-4" style="background-color: rgb(40, 73, 77); color: rgb(255, 255, 255); background-image: url(/bg.png);"><header class="masthead">
+  <div class="avatar"><img src="/zzonddeok.jpg" class="avatar-image" alt="Minseok Seo">
+    </div>
+  <div class="masthead-title">
+    <a href="/" title="Home">서민석의 블로그</a>
+  </div>
+  <div class="masthead-tagline">
+    <small></small>
+  </div><nav class="navigation">
+    <ul class="navigation-list"><li class="navigation-item">
+        <a onclick="sessionStorage.setItem('forceCheckScroll', 'true')" href="/">Blog</a>
+      </li><li class="navigation-item">
+        <a onclick="sessionStorage.setItem('forceCheckScroll', 'true')" href="/about/">About</a>
+      </li></ul>
+  </nav><div class="social pure-menu pure-menu-horizontal">
+      <ul class="social-icons pure-menu-list">
+      <li class="pure-menu-item">
+          <a class="social-icon pure-menu-link" href="mailto://seominseok@gm.gist.ac.kr">
+            <i class="fas fa-envelope" title="Email"></i>
+          </a>
+        </li><li class="pure-menu-item">
+          <a class="social-icon pure-menu-link" href="https://github.com/seominseok00">
+            <i class="fab fa-github" title="GitHub"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+</header>
+</div>
+
+      <div class="content pure-u-1 pure-u-md-1-2"><main>
+  <article class="post">
+  <h1 class="post-title">[블로그] 2.구글 검색 엔진, 애널리틱스 등록</h1>
+  <div class="post-meta"><time datetime="2022-10-17T00:00:00+09:00" itemprop="datePublished">17 Oct 2022</time></div>
+
+  <h3 id="google-search-console">Google Search Console</h3>
+
+<p>Google Search Console은 구글 검색 엔진에서 웹 사이트가 검색되도록 등록해주고, 사용자가 어떤 검색어를 통해 내 사이트를 방문하는지 알려주는 웹 서비스이다.</p>
+
+<p>즉, Google Search Console을 사용해야 검색 결과에서 내 블로그를 확인할 수 있다는 뜻이다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196089627-cd7dfad5-b2fd-4182-9df6-c0f41819ecb2.png" alt="image" /><em>검색해도 안나오는 내 블로그 ···</em></p>
+
+<p><br /></p>
+
+<p><strong>Google Search Console 등록하기</strong></p>
+
+<p><a href="https://search.google.com/search-console/about">Google Search Console</a> 👈 이 링크에 들어가서 시작하기를 누르면 도메인 등록 방식과 URL 접두어 등록 방식이 나온다.</p>
+
+<p>현재 우리는 <strong>github.io</strong> 도메인을 사용하므로, 도메인 방식은 사용할 수 없다. (커스텀 도메인을 등록해야 한다)</p>
+
+<p>URL 접두어 방식에 다음과 같이 블로그 주소를 작성하고 계속을 누른다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196089916-a8cd16fb-0aed-4892-92eb-7c3880adb7e1.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>그러면 인증 코드가 담겨있는 html 파일을 다운 받을 수 있는데, 사이트 소유권 확인을 위해 해당 파일을 다운받은 뒤 이를 repository에 업로드해야 한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196115987-d1cb2f88-6558-442e-826a-4bbf3d9fd0a0.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>다운받은 파일을 이렇게 repository 최상위 디렉토리에 넣은 뒤,</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196116195-ed7b5881-d746-4ffa-9d54-c91d5bb25b20.png" alt="image" /></p>
+
+<p>다음 명령어를 순서대로 입력해 업로드한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Register on google search conosole"</span>
+git push origin master
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196120843-f1befc4a-0998-4b00-ab9e-ed517ff0bb50.png" alt="image" /></p>
+
+<p>파일이 제대로 push된 것을 확인한 뒤 완료를 누르면 소유권 확인이 완료 됐다는 문구가 뜨게 된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196090861-075adb84-1b28-4581-ace0-98e6f87cdde3.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p><strong>속성으로 이동</strong>을 누르면 이렇게 데이터를 처리하는 중이라는 문구가 뜬다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196091040-974a43a1-435d-45a1-8f22-8cb0a10e7ca9.png" alt="image" /></p>
+
+<p>구글 검색 결과에 웹 사이트가 나오려면, 구글 검색 엔진이 웹 사이트를 읽는 작업(크롤링)을 진행해야 하는데 이 과정이 완료돼야 검색했을 때 사이트가 나타나게 된다.</p>
+
+<p><br /></p>
+
+<p>구글 검색 엔진이 크롤링을 하려면, sitemap을 등록해야 한다. 왼쪽 사이드바의 색인-&gt;Sitemaps를 누르면 다음과 같은 화면이 나온다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196092154-807471c4-4c1d-49c3-ba7a-3a609e0f62d0.png" alt="image" /></p>
+
+<p><strong>새 사이트맵 추가</strong> 부분에 sitemap.xml을 적고 제출을 누르면 sitemap이 등록된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196092606-269b6fe6-6ae5-4bfe-a700-4e0b3540dafd.png" alt="image" /></p>
+
+<p>이제 크롤링이 끝날 때까지 며칠 기다리면 된다.</p>
+
+<p><br /></p>
+
+<p>➕ 2022/10/20</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196979614-5a323b35-1fc6-420d-bc26-02fb5b6bdbe5.png" alt="image" /></p>
+
+<center><i> 3일 정도 뒤에 확인해보니 크롤링이 완료됐다. </i></center>
+
+<p><br /></p>
+
+<h3 id="google-analytics">Google Analytics</h3>
+
+<p>Google Search Console은 구글 검색 엔진을 통해 유입되는 방문자 정보를 확인할 수 있다면 Google Analytics는 네이버, 다음, 또는 직접 웹 사이트로 유입되는 방문자의 정보를 확인할 수 있다.</p>
+
+<p>방문자의 도시, 유입 경로, 방문한 페이지 등의 정보를 확인할 수 있다.</p>
+
+<p><br /></p>
+
+<p><strong>Google Analytics 등록하기</strong></p>
+
+<p><a href="https://analytics.google.com/analytics/web/provision/#/provision">Google Analytics</a> 👈 이 링크에 들어가서 측정 시작을 누른 뒤, 계정 이름에 깃허브 username을 적는다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196107482-c17230a4-8f9b-45d7-8523-3e4f0a8a1bab.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>속성 이름에는 깃허브 블로그 주소를 적는다.</p>
+
+<p>추가로 시간대, 통화를 선택하고 비즈니스 정보까지 체크한 뒤 약관계약까지 동의하면 끝</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196107814-7b7d275f-8fb7-402f-a8b0-6285cc933f78.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>그러면 다음과 같은 화면이 나오는데, 우리는 웹 사이트를 연결할 예정이므로 플랫폼에서 웹을 클릭한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196108463-53187750-083f-495a-a5c8-d7092cda8169.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>웹사이트 URL을 적어주고 스트림 만들기를 클릭하면</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196108692-48037c47-22b4-4da6-b940-1451c64f2f86.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이렇게 측정 ID(Tracking ID)가 생성된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196108991-b6501b52-7d1c-4dac-a35c-ff84112b5f5c.png" alt="image" /></p>
+
+<p>이 측정 ID를 복사해 /_config.yml 파일의 tracking_id를 수정하면 끝이다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Analytics</span>
+analytics:
+  provider               : <span class="s2">"google-gtag"</span>
+  google:
+    tracking_id          : <span class="s2">"Tracking ID"</span>
+    anonymize_ip         : <span class="c"># true, false (default)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>왼쪽 사이드바에 있는 보고서를 클릭했을 때, 다음과 같이 지난 30분 동안의 사용자가 표시되면 연동이 완료된 것이다 👏</p>
+
+<p><img src="https://user-images.githubusercontent.com/110466566/196114796-bf266200-690a-43f1-828c-bd91eb180e02.png" alt="image" /></p>
+
+
+  
+    <div class="post-tags-section">
+  <i class="post-tags-icon fas fa-tags"></i>
+  <ul class="post-tags"></ul>
+</div>
+
+  
+
+  
+</article>
+
+
+<aside class="related">
+  <h2>Related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/blog/2023/11/14/6.multiple-github-accounts/">
+          [블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기
+          <small><time datetime="2023-11-14T00:00:00+09:00">14 Nov 2023</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/2022/10/28/5.google-adsense/">
+          [블로그] 5. 구글 애드센스 등록
+          <small><time datetime="2022-10-28T00:00:00+09:00">28 Oct 2022</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/2022/10/22/4.local-hosting/">
+          [블로그] 4. 깃허브 블로그 로컬 호스팅
+          <small><time datetime="2022-10-22T00:00:00+09:00">22 Oct 2022</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+
+
+<script src="https://utteranc.es/client.js"
+        repo="seominseok00/comments"
+        issue-term="pathname"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</main>
+
+<footer class="footer"><small>
+    &copy; 2022&nbsp;-&nbsp;2024 <a href="https://github.com/seominseok00/">Minseok Seo</a>. All rights reserved.
+    Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/vszhub/not-pure-poole">Not Pure Poole</a>.
+  </small>
+</footer>
+</div>
+      <div class="sidebar-right pure-u-1 pure-u-md-1-4">
+</div>
+    </div>
+
+    <script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script><script>
+  function strip(str, remove) {
+    while (str.length > 0 && remove.indexOf(str.charAt(0)) != -1) {
+      str = str.substr(1);
+    }
+    while (str.length > 0 && remove.indexOf(str.charAt(str.length - 1)) != -1) {
+      str = str.substr(0, str.length - 1);
+    }
+    return str;
+  }
+
+  function scroll() {
+    console.log('scroll');
+    window.scrollTo({
+      left: 0, 
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+    sessionStorage.removeItem('forceCheckScroll');
+  }
+
+  const forceCheckScroll = sessionStorage.getItem('forceCheckScroll') === 'true';
+  const checkScroll = strip(window.location.pathname, '/') !== strip('', '/');
+
+  if (forceCheckScroll || checkScroll) {
+    const maxWidth = "(max-width: 48rem)";
+    const result = window.matchMedia(maxWidth);
+    if (result.matches) {
+      scroll();
+    } else {
+      result.addListener((match) => {
+        if (match.media == maxWidth) {
+          if (match.matches) {
+            scroll();
+          }
+        }
+      });
+    }
+  }
+</script>
+</body>
+</html>

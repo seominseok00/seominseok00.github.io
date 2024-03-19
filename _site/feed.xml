@@ -1,1 +1,841 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-03-18T20:51:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">서민석의 블로그</title><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-03-19T17:05:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">서민석의 블로그</title><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><entry><title type="html">[블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기</title><link href="http://localhost:4000/blog/2023/11/14/6.multiple-github-accounts/" rel="alternate" type="text/html" title="[블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기" /><published>2023-11-14T00:00:00+09:00</published><updated>2023-11-14T00:00:00+09:00</updated><id>http://localhost:4000/blog/2023/11/14/6.multiple%20github%20accounts</id><content type="html" xml:base="http://localhost:4000/blog/2023/11/14/6.multiple-github-accounts/">&lt;h3 id=&quot;github-접속용-ssh-key-생성-및-등록&quot;&gt;Github 접속용 SSH Key 생성 및 등록&lt;/h3&gt;
+
+&lt;p&gt;SSH Key를 생성하기 전에 먼저 Git을 설치해야 한다 👉 &lt;a href=&quot;http://archive.today/6VtyG&quot;&gt;맥에서 Git 설치하기&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SSH Key 생성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;터미널에서 깃허브를 관리하기 위해선 SSH Key를 등록해야 하는데, 그 전에 아래 명령어를 실행해서 SSH Key를 생성하자.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github email&lt;/code&gt; 부분에 깃허브 이메일로 등록된 이메일 주소를 작성하면 된다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id_rsa_alias&lt;/code&gt; 부분에는 alias만 변경하면 된다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/.ssh
+ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;github email&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;id_rsa_alias&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/150681724/d7fec7a8-998e-45a7-a463-b7a04dc57932&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Enter passpharse가 나오면 비밀번호를 설정해주면 된다. (앞으로 git 명령어를 사용할 때마다 사용할 비밀번호이니 기억해야 한다)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;비밀번호 확인까지 진행하면 다음과 같이 SSH Key가 생성되게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/150681724/a32914ca-656d-40b1-83c8-ff082e2e920c&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;우리는 두 개의 아이디를 등록할거기 때문에 이 과정을 한 번 더 해주면 된다.&lt;/p&gt;
+
+&lt;p&gt;이때 아래 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github email&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id_rsa_alias&lt;/code&gt;에는 앞서 생성한 것과 다른 이메일과 아이디를 사용해야 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;github email&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;id_rsa_alias&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;나는 아래처럼 두 개의 파일을 생성했다. (seominseok, seominseoktech)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/150681724/960a5fe4-caf9-4259-a323-a1346f18f0a4&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 cat 명령어로 해당 파일 내용을 확인한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /Users/seominseok/.ssh/id_rsa_alias.pub
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이후 ssh-rsa로 시작하고 위에서 작성한 이메일 주소로 끝나는 SSH Key를 복사한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/150681724/5296dbd6-eaf0-469e-bced-829aeddaf05e&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SSH Key 등록&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;다시 깃허브로 돌아와서 Settings에 들어간다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/150681724/f51f3f1e-76fe-49cb-bf78-fbffc708c455&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;왼쪽 SSH and GPG Keys를 클릭한 뒤, &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; New SSH Key &lt;/mark&gt;를 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/150681724/1a1e5639-1b96-434b-af28-dd5c1bf4b6d2&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 아까 복사한 SSH Key를 붙여넣기하면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/150681724/764358e4-4a42-40b9-aa23-0181bac1b5db&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;❗️이때 ssh-keygen으로 생성할 때 입력한 이메일에 해당하는 계정으로 각각 등록해줘야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 vi로 configuration 파일을 수정한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vi ~/.ssh/config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 개인 계정
+Host github.com-alias1
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_alias1
+
+# 업무 계정
+Host github.com-alias2
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_alias2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;❗️alias 부분에 ssh-keygen으로 생성시 입력한 값을 넣어야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/150681724/98f2fd03-2ec5-4d2f-8bec-5be606194e49&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;저장한 뒤, ssh-add 명령어로 아까 생성한 파일들을 등록한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh-add ~/.ssh/id_irsa_alias1
+ssh-add ~/.ssh/id_irsa_alias2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/150681724/73ee6cf4-1878-4e00-8bd5-63a50aad6ab7&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;ssh -T 명령어로 테스트 했을 때 다음과 같이 뜨면 ssh 설정이 완료된 것이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh &lt;span class=&quot;nt&quot;&gt;-T&lt;/span&gt; git@github.com-alias1
+ssh &lt;span class=&quot;nt&quot;&gt;-T&lt;/span&gt; git@github.com-alias2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/150681724/7c1c6f2d-8058-4f30-858d-88e18f17a649&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ssh로-git-clone-해보기&quot;&gt;SSH로 git clone 해보기&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/150681724/200b3fca-0c27-4dd7-8f8b-22be2f6ae2ec&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;clone할 repository에서 다음과 같이 ssh로 설정하고 복사한다.&lt;/p&gt;
+
+&lt;p&gt;그러면 아래와 같은 형식으로 복사될텐데&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git@github.com:깃허브아이디/깃허브리퍼지토리.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;해당 repository에 연결할 깃허브 계정의 호스트명(alias1, alias2)으로 다음과 같이 설정하면 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git@github.com-alias1:깃허브아이디/깃허브리퍼지토리.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/150681724/4a711d18-e380-40b9-bc98-87acfe05a428&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;❗️commit이나 push 하기 전에 다음과 같이 config name, email을 설정한 뒤 푸쉬해야 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config user.name 아이디
+git config user.email 이메일
+
+# 설정 확인
+git config user.name
+git config user.email
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Blog" /><summary type="html">ssh key 여러 개 등록하는 방법</summary></entry><entry><title type="html">[블로그] 5. 구글 애드센스 등록</title><link href="http://localhost:4000/blog/2022/10/28/5.google-adsense/" rel="alternate" type="text/html" title="[블로그] 5. 구글 애드센스 등록" /><published>2022-10-28T00:00:00+09:00</published><updated>2022-10-28T00:00:00+09:00</updated><id>http://localhost:4000/blog/2022/10/28/5.google%20adsense</id><content type="html" xml:base="http://localhost:4000/blog/2022/10/28/5.google-adsense/">&lt;h3 id=&quot;구글-애드센스-등록&quot;&gt;구글 애드센스 등록&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.google.com/intl/ko_kr/adsense/start/&quot;&gt;구글 애드센스&lt;/a&gt; 👈 이 링크에 들어가서 오른쪽 상단에 있는 로그인을 클릭한 뒤, 로그인 하면 다음과 같은 창이 뜬다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/76269316/198419950-c07a8bfe-94a1-4509-a2ce-9de90fd879d1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;가입을 클릭한 뒤 사이트 주소 작성 및 국가 선택을 한다.&lt;/p&gt;
+
+&lt;p&gt;이후 아래 이용약관에 동의하고, &lt;mark style=&quot;background-color: #f1f8ff&quot;&gt; 애드센스 사용 시작 &lt;/mark&gt;을 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/76269316/198420222-57a84c78-fdd8-4698-8a1e-e7f23c8a778c.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;그러면 다음과 같은 화면이 나오는데 첫번째 정보 입력은 개인 주소지만 입력하면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/76269316/198420614-b72c409f-3a1c-4914-a765-e74e4cd203c4.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;두번째 광고에 들어가서 자동 광고를 클릭하면 내 사이트에 광고가 어떻게 표시되는지 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/76269316/198421210-89a44e6f-876e-4cb7-b0dc-3f452c232b81.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/76269316/198421329-085f911d-dff7-4711-ba4d-9c328af16392.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;나는 이렇게 꽉차는 광고도 싫고&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/76269316/198421525-0d3c9948-b6b0-4b9b-b3fd-930596d48ac3.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;글 중간에 나오는 광고도 싫어서 다 없앴다.&lt;/p&gt;
+
+&lt;p&gt;웹 페이지 로딩시에 나오는 광고를 없애려면 광고 형식-&amp;gt;모바일 전면광고를 체크 해제하면 된다.&lt;/p&gt;
+
+&lt;p&gt;포스팅 중간에 나오는 광고를 없애려면 자동 광고 수를 최소로 하면 된다.&lt;/p&gt;
+
+&lt;p&gt;각자 스타일에 따라 설정하고 &lt;mark style=&quot;background-color: #f1f8ff&quot;&gt; 사이트에 적용 &lt;/mark&gt;을 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;세번째 &lt;mark style=&quot;background-color: #f1f8ff&quot;&gt; 시작하기 &lt;/mark&gt; 를 클릭하면 애드센스 코드가 나오는데, 이를 복사하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\_layout\default.html&lt;/code&gt;에 붙여넣으면 된다.&lt;/p&gt;
+
+&lt;p&gt;이후 &lt;mark style=&quot;background-color: #f1f8ff&quot;&gt; 검토 요청 &lt;/mark&gt;을 클릭하면 승인 심사가 시작된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/209782673-dd612a07-7681-477f-a38f-e89335b6e666.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Blog" /><summary type="html">구글 애드센스 등록 방법 정리</summary></entry><entry><title type="html">[블로그] 4. 깃허브 블로그 로컬 호스팅</title><link href="http://localhost:4000/blog/2022/10/22/4.local-hosting/" rel="alternate" type="text/html" title="[블로그] 4. 깃허브 블로그 로컬 호스팅" /><published>2022-10-22T00:00:00+09:00</published><updated>2022-10-22T00:00:00+09:00</updated><id>http://localhost:4000/blog/2022/10/22/4.local%20hosting</id><content type="html" xml:base="http://localhost:4000/blog/2022/10/22/4.local-hosting/">&lt;blockquote&gt;
+  &lt;p&gt;매번 변경 사항이 있을 때마다 커밋 하니까 쓸 데 없는 커밋도 너무 많아지고, 적용도 바로 바로 안돼서 로컬 호스팅을 사용해보기로 했다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;❗️해당 포스팅은 m1 맥북을 기준으로 작성되었습니다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;로컬-호스팅이란&quot;&gt;로컬 호스팅이란?&lt;/h3&gt;
+
+&lt;p&gt;우리가 만든 블로그에 접속하기 위해서는 블로그를 호스팅(hosting)하는 컴퓨터가 한 대 있어야 한다.&lt;/p&gt;
+
+&lt;p&gt;즉, 블로그에 접속하려면 호스팅을 하는 컴퓨터가 켜져 있어야 한다는 것인데&lt;/p&gt;
+
+&lt;p&gt;접속할 때마다 컴퓨터를 키는 건 매우 비효율적이다. 그렇다고 개인 컴퓨터를 365일 내내 켜놓자니 그것 또한 매우 부담스러울 것이다.&lt;/p&gt;
+
+&lt;p&gt;그래서 대부분은 일정 금액을 지불하고 서버 컴퓨터에 블로그 파일들을 저장한 다음, 서버 컴퓨터에서 호스팅을 대신 해주는 &lt;strong&gt;웹 호스팅 방식&lt;/strong&gt;을 사용한다.&lt;/p&gt;
+
+&lt;p&gt;우리가 만든 깃허브 블로그도 깃허브에서 제공하는 웹 호스팅 서비스(Github Pages)를 이용해 접속하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;하지만 이러한 웹 호스팅 방식은 내가 블로그 파일을 수정하면, 서버와 동기화하는 시간이 필요하기 때문에 곧바로 반영 되지 않는다.&lt;/p&gt;
+
+&lt;p&gt;내 컴퓨터로 호스팅 하는 것을 로컬 호스팅이라고 하는데, 로컬 호스팅을 사용하면 변경 사항을 바로 확인할 수 있기 때문에 이번 포스팅에서는 로컬 호스팅을 위한 환경 설정을 할 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;homebrew-설치하기&quot;&gt;Homebrew 설치하기&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://brew.sh/index_ko&quot;&gt;Homebrew&lt;/a&gt;는 macOS용 패키지 관리자이다. 홈페이지에 있는 아래 명령어를 복사해 터미널에서 실행하면 Homebrew가 설치된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/bin/bash &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;내가 사용하고 있는 테마는 &lt;a href=&quot;https://jekyllrb-ko.github.io/&quot;&gt;Jekyll&lt;/a&gt;이라는 정적 웹사이트 생성기로 만들어졌다 👉 &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/&quot;&gt;minimal mistakes&lt;/a&gt; 공식 홈페이지&lt;/p&gt;
+
+&lt;p&gt;우리는 Jekyll로 만들어진 블로그 파일들을 Github Pages라는 웹 호스팅 서비스를 통해 호스팅하고 있는데, Github Pages 역시 Jekyll로 구동된다.&lt;/p&gt;
+
+&lt;p&gt;또한, Jekyll은 Ruby라는 인터프리터 언어로 생성됐기 때문에 로컬 호스팅을 하기 위해서는 Ruby와 Jekyll을 설치해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ruby-설치하기&quot;&gt;Ruby 설치하기&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ruby-lang.org/ko/&quot;&gt;Ruby&lt;/a&gt;는 파이썬과 같은 인터프리터 방식의 프로그래밍 언어이다.&lt;/p&gt;
+
+&lt;p&gt;Ruby를 설치하기 위해선 rbenv, ruby-build를 설치해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;rbenv&lt;/strong&gt;는 여러 ruby 버전을 독립적으로 설치할 수 있도록 도와주는 패키지이고(설치를 지원하지는 않음), &lt;strong&gt;ruby-build&lt;/strong&gt;는 ruby를 설치하는 플러그인이다.&lt;/p&gt;
+
+&lt;p&gt;아래 명령어를 사용해서 rbenv, ruby-build를 설치하자&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;rbenv ruby-build
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197305747-08fe8997-7e4c-400b-a38e-3824338b4e01.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 아래 명령어를 사용해서 설치 가능한 ruby 버전을 확인한 뒤, 설치한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rbenv &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197305844-447e86fc-178a-4d03-8cec-2d6a4bc0cd88.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;❗ruby가 최신 버전이면 jekyll과 호환이 안 될 수도 있으므로 안전하게 최신 버전보다 한두 개 아래 버전을 설치하자&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;나는 2.7.6 버전으로 설치했다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rbenv &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;2.7.6
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197306773-eac2f428-2258-4d1a-8417-11aaec2362e5.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;설치 후 글로벌 버전을 2.7.6(각자 설치한 버전)으로 변경한 뒤, 버전을 확인하면 2.7.6이 선택된 것(*)을 확인할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rbenv global 2.7.6
+rbenv versions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197306958-4f5cffe6-c1c9-42e5-94f3-bd3282864a15.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 아래 명령어를 사용해 .zsh 설정 파일을 연 뒤,&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;open ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;➕ 만약 파일이 없다고 나올 경우 아래 명령어를 사용해 파일을 만들면 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;아래 두 줄을 추가한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; ~/.rbenv  &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/.rbenv/bin:&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;rbenv init -&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197307760-c4b01f6e-d100-4114-b24b-87afe12ab604.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 source 명령어를 사용해 변경한 설정을 적용시켜 주면 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;bundler&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Gem(rubygem)은 ruby에서 지원하는 패키지 시스템으로 리눅스 패키지 시스템인 yum, apt 같은 패키지 설치 및 관리 도구이다.&lt;/p&gt;
+
+&lt;p&gt;gem 명령어를 사용해 bundler를 설치할 것이다. (bundler는 ruby 프로젝트에서 필요한 gem을 설치해주는 의존성 관리 툴이다)&lt;/p&gt;
+
+&lt;p&gt;아래 명령어를 입력해 bundler를 설치하자&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;bundler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197307379-e8496af7-32d9-4cd9-a0b9-b868646ec6ff.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;jekyll-설치하기&quot;&gt;Jekyll 설치하기&lt;/h3&gt;
+
+&lt;p&gt;이어서 아래 명령어로 jekyll을 설치한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197308043-8f809adb-97bf-4bc9-8202-f7bf5ed64d3d.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기까지 했으면 이제 로컬 호스팅을 위한 준비 과정이 모두 끝이다. 이제 로컬 호스팅을 해보자&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;로컬-호스팅&quot;&gt;로컬 호스팅&lt;/h3&gt;
+
+&lt;p&gt;블로그 파일이 저장된 디렉토리로 가서 bundler를 설치한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;나는 &lt;strong&gt;/Users/seominseok/seominseok00.github.io&lt;/strong&gt; 디렉토리에 설치했다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundler &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197308231-6b8d3c6b-c247-4dab-b7f2-1efde5488653.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 위 명령어를 실행하면&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;다음과 같이 블로그가 로컬로 호스팅 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197308266-1d29c0b5-5a72-4fe5-9cb4-3944da0eadc9.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Server address라고 적혀있는 http://127.0.0.1:4000에 접속했을 때 이렇게 블로그가 나온다면 정상적으로 호스팅 된 것이다 👏&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197314902-1eb60678-78eb-46d1-8630-6dec757d7fe1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;i&gt;❗️주소창이 127.0.0.1.4000인지 확인하자 &lt;/i&gt;&lt;/center&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Blog" /><summary type="html">M1 맥북 깃허브 블로그 로컬 호스팅 방법 정리</summary></entry><entry><title type="html">[블로그] 1.깃허브 블로그 생성</title><link href="http://localhost:4000/blog/2022/10/17/1.github-blog-init/" rel="alternate" type="text/html" title="[블로그] 1.깃허브 블로그 생성" /><published>2022-10-17T00:00:00+09:00</published><updated>2022-10-17T00:00:00+09:00</updated><id>http://localhost:4000/blog/2022/10/17/1.github%20blog%20init</id><content type="html" xml:base="http://localhost:4000/blog/2022/10/17/1.github-blog-init/">&lt;p&gt;깃허브 블로그 생성부터 생성부터 자잘한 설정까지 포스팅으로 정리하려고 한다.&lt;/p&gt;
+
+&lt;p&gt;❗️해당 포스팅은 m1 맥북을 기준으로 작성되었습니다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;깃허브-블로그-테마-다운로드&quot;&gt;깃허브 블로그 테마 다운로드&lt;/h3&gt;
+
+&lt;p&gt;깃허브 블로그를 생성하려면 우선 남들이 만들어 놓은 무료 테마를 다운로드 해야한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wiznxt.tistory.com/m/677&quot;&gt;Jekyll 지킬 블로그 테마 검색 추천 사이트 - 2022.08.09&lt;/a&gt;  👈 여기에서 마음에 드는 테마를 골라 해당 테마의 repository로 이동한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;나는 &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;minimal mistakes&lt;/a&gt;를 골랐다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;원래는 해당 repository를 fork해서 사용하면 되지만, 나는 fork말고 다운받아서 사용할 것이다.&lt;/p&gt;
+
+&lt;p&gt;fork해서 만들려면 아래 유튜브를 보고 따라하면 된다.&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;깃헙(GitHub) 블로그 10분 안에 완성하기&lt;/summary&gt;
+  &lt;iframe width=&quot;912&quot; height=&quot;513&quot; src=&quot;https://www.youtube.com/embed/ACzFIAOsfpM&quot; title=&quot;깃헙(GitHub) 블로그 10분안에 완성하기&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;테마를 골랐으면, 해당 테마가 저장된 repository로 가서 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; Code &lt;/mark&gt; 버튼을 누른다.&lt;/p&gt;
+
+&lt;p&gt;그러면 다음과 같이 링크와 복사할 수 있는 버튼이 나오게 되는데, 버튼을 눌러 해당 링크를 복사한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196064244-c1ac61ce-9a0d-4f77-8cc1-3b78607163b5.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;i&gt; 테마를 다운받을 때는 오른쪽 상단의 ⭐️ Starred 버튼을 눌러서 개발자에게 감사를 표하자 &lt;/i&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;파일을 다운로드 하기전에 cd 명령어로 해당 파일을 저장할 경로로 이동한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;나는 /Users/seominseok 경로에 다운받았다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 터미널 창을 열어 git clone 해서 파일을 다운로드 받는다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/mmistakes/minimal-mistakes.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196064391-a74776f4-9a29-41fe-bc14-6bfa3e705654.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;해당 경로로 이동했을 때 이렇게 파일들이 다운로드 됐다면 정상적으로 수행된 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196064537-a462747d-d8a6-4c56-acc1-703f03288025.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;repository-생성하기&quot;&gt;Repository 생성하기&lt;/h3&gt;
+
+&lt;p&gt;테마를 다운로드 받았으면, 이제 내 깃허브에서 repository를 생성해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196064651-752d7d48-fd5b-42eb-89d5-c990c44319c6.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;오른쪽 상단에 있는 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; New &lt;/mark&gt; 버튼을 클릭해 새로운 repository를 생성한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Repository name 부분에 &lt;strong&gt;깃허브id.github.io&lt;/strong&gt;를 작성한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;내 깃허브 id는 seominseok00이기 때문에 seominseok00.github.io로 만들었다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196065126-6431a6ec-a213-4745-bff8-3475e42e1202.png&quot; alt=&quot;image&quot; /&gt;이후 아래 Add a README file을 체크하고, &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; Create repository &lt;/mark&gt;를 눌러 repository를 생성한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;repository를 생성하면 다음과 같이 README 파일만 달랑 존재하는 repository가 생성되게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196065230-655c6ea6-bbc7-4886-aa1e-e1b043af1397.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;거의 모든 블로그가 main이 아닌 master branch를 기준으로 설명하기 때문에, main branch를 master로 이름을 변경할 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;mark style=&quot;background-color: #dcffe4&quot;&gt; Code &lt;/mark&gt; 버튼이 있는 줄의 branch 버튼을 누르면, 아래 화면처럼 디폴트로 설정된 main branch가 나오게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;1624&quot; alt=&quot;스크린샷 2022-10-17 오전 9 04 06&quot; src=&quot;https://user-images.githubusercontent.com/110466566/196065379-76325fe4-7528-48aa-b0f8-d55e210a2aff.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Default branch 오른쪽 끝에 있는 ✏️ 모양을 클릭하면&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196065593-a17e9407-d88f-4e26-805c-b4c2fc8a0485.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음과 같이 변경할 branch 이름을 지정할 수 있다. 이를 master로 변경하고 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; Rename branch &lt;/mark&gt;를 클릭하면 끝이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196065680-bd09e2f1-77fb-4d62-a58d-ba7d1f933f47.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;github-접속용-ssh-key-생성-및-등록&quot;&gt;Github 접속용 SSH Key 생성 및 등록&lt;/h3&gt;
+
+&lt;p&gt;SSH Key를 생성하기 전에 먼저 Git을 설치해야 한다 👉 &lt;a href=&quot;http://archive.today/6VtyG&quot;&gt;맥에서 Git 설치하기&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SSH Key 생성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;터미널에서 깃허브를 관리하기 위해선 SSH Key를 등록해야 하는데, 그 전에 아래 명령어를 실행해서 SSH Key를 생성하자.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;github email 부분에 깃허브 이메일로 등록된 이메일 주소를 작성하면 된다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;github email&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;그러면 이렇게 Enter file in which to save the key가 나오게 되는데, 엔터를 눌러준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196065949-a17dbcd9-12b8-4177-a8fd-f52cbf12d966.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 Enter passpharse가 나오면 비밀번호를 설정해주면 된다. (앞으로 git 명령어를 사용할 때마다 사용할 비밀번호이니 기억해야 한다)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196066020-3d51bc74-9098-4a1b-97a3-e94d0fcfa454.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;나는 이전에 생성했었기 때문에 Overwrite 여부를 물어봤다&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;비밀번호 확인까지 진행하면 다음과 같이 SSH Key가 생성되게 된다.&lt;/p&gt;
+
+&lt;p&gt;이후 파랑색 박스 표시된 부분의 경로를 복사한 뒤&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196066298-1d0bff5c-6e89-4534-899e-f3cab3272cfe.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;cat 명령어로 해당 파일 내용을 확인한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /Users/seominseok/.ssh/id_rsa.pub
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이후 ssh-rsa로 시작하고 위에서 작성한 이메일 주소로 끝나는 SSH Key를 복사한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196066468-73b9c657-4889-4f2f-b05d-093dd9a0b095.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SSH Key 등록&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;다시 깃허브로 돌아와서 Settings에 들어간다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196066511-f9c83fec-c017-4e8f-9b2e-0f07d1b22076.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;왼쪽 SSH and GPG Keys를 클릭한 뒤, &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; New SSH Key &lt;/mark&gt;를 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196066556-290e5bb0-8830-4761-b048-61acf3e5b39b.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 아까 복사한 SSH Key를 붙여넣기하면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196066657-d6d79748-7d35-412b-bf7a-263837acc1eb.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;git-초기-설정-및-블로그-생성&quot;&gt;Git 초기 설정 및 블로그 생성&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://seominseok00.github.io/blog/1.github-blog-init/#2-repository-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;2.Repository 생성하기&lt;/a&gt;에서 생성한 repository로 가서 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; Code &lt;/mark&gt; 버튼을 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;가운데 있는 SSH를 누르고 해당 링크를 복사한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196066921-877d9b93-82d2-4799-9d95-91137cb628b7.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;다시 터미널 창을 켜서 앞으로 블로그 파일을 관리할 경로로 cd 명렁어로 이동한다.&lt;/p&gt;
+
+&lt;p&gt;이후 git clone 명령어를 사용해 내 repository를 다운 받는다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git@github.com:seominseok00/seominseok00.github.io.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;git@github.com:seominseok00/seominseok00.github.io.git 이 부분에 복사한 링크를 넣으면 된다&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;git clone 명령어를 실행하면 비밀번호를 입력하라고 나오는데, 이 때 앞서 ssh key를 만들 때 생성한 비밀번호를 입력하면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196067156-7256fa1c-0cdb-40f4-802a-b717a231b87a.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이렇게 README 파일만 있는 디렉토리가 생성되면 정상적으로 수행된 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196067238-f7eaeeab-6fad-44fe-8359-2a78c03028e3.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 거의 다 했다. 맨 처음 다운받은 깃허브 테마 파일을 모두 복사해서 내 repository 폴더로 복사한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196067350-d7e288d0-81c2-4123-9e17-e3db19ddc91d.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196067532-b1d072ef-3c81-48d3-ae9c-b2401f868068.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이렇게 파일까지 복사한 뒤 아래 명령어를 순서대로 입력하면 깃허브에 파일이 올라간다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;minimal mistakes&quot;&lt;/span&gt;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;git push origin master를 입력하면 비밀번호를 입력하라고 나오는데, 이 때도 SSH Key를 생성할 때 만든 비밀번호를 입력하면 된다&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 다시 깃허브 repository에 가보면 이렇게 파일이 업로드 돼 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196069529-e874c9c6-43d9-4a93-835a-fa95f705e414.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막으로 주소창에 &lt;strong&gt;깃허브id.github.io&lt;/strong&gt;를 입력하면 이렇게 블로그가 생성된 것을 확인할 수 있다 👏&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196069573-fd879ef6-e699-4b04-b82a-f8389c665692.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ds_store-파일-삭제&quot;&gt;DS_Store 파일 삭제&lt;/h3&gt;
+
+&lt;p&gt;DS_Store 파일은 Desktop Service Store의 약자로, 해당 디렉토리에 대한 메타 데이터가 저장돼 있다.&lt;/p&gt;
+
+&lt;p&gt;애플의 맥 OS에서 파인더로 폴더에 접근할 때 자동으로 생기는 파일이기 때문에, git 명령어로 파일을 업로드 할 때마다 해당 파일이 같이 업로드 되게 된다.&lt;/p&gt;
+
+&lt;p&gt;먼저 아래 명령어로 해당 디렉토리 아래의 모든 .DS_Store 파일을 제거한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-name&lt;/span&gt; .DS_Store &lt;span class=&quot;nt&quot;&gt;-print0&lt;/span&gt; | xargs &lt;span class=&quot;nt&quot;&gt;-0&lt;/span&gt; git &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--ignore-unmatch&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 echo 명령어로 해당 확장자를 가진 파일을 업로드하지 않도록 gitignore 해준다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; .DS_Store &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; .gitignore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막으로 변경 사항을 반영해주면 끝&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-rbash&quot;&gt;git add .
+git commit -m &quot;.DS_Store remove&quot;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Blog" /><summary type="html">깃허브 블로그 생성 방법 정리</summary></entry><entry><title type="html">[블로그] 2.구글 검색 엔진, 애널리틱스 등록</title><link href="http://localhost:4000/blog/2022/10/17/2.google-search-and-analytics/" rel="alternate" type="text/html" title="[블로그] 2.구글 검색 엔진, 애널리틱스 등록" /><published>2022-10-17T00:00:00+09:00</published><updated>2022-10-17T00:00:00+09:00</updated><id>http://localhost:4000/blog/2022/10/17/2.google%20search%20and%20analytics</id><content type="html" xml:base="http://localhost:4000/blog/2022/10/17/2.google-search-and-analytics/">&lt;h3 id=&quot;google-search-console&quot;&gt;Google Search Console&lt;/h3&gt;
+
+&lt;p&gt;Google Search Console은 구글 검색 엔진에서 웹 사이트가 검색되도록 등록해주고, 사용자가 어떤 검색어를 통해 내 사이트를 방문하는지 알려주는 웹 서비스이다.&lt;/p&gt;
+
+&lt;p&gt;즉, Google Search Console을 사용해야 검색 결과에서 내 블로그를 확인할 수 있다는 뜻이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196089627-cd7dfad5-b2fd-4182-9df6-c0f41819ecb2.png&quot; alt=&quot;image&quot; /&gt;&lt;em&gt;검색해도 안나오는 내 블로그 ···&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Google Search Console 등록하기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://search.google.com/search-console/about&quot;&gt;Google Search Console&lt;/a&gt; 👈 이 링크에 들어가서 시작하기를 누르면 도메인 등록 방식과 URL 접두어 등록 방식이 나온다.&lt;/p&gt;
+
+&lt;p&gt;현재 우리는 &lt;strong&gt;github.io&lt;/strong&gt; 도메인을 사용하므로, 도메인 방식은 사용할 수 없다. (커스텀 도메인을 등록해야 한다)&lt;/p&gt;
+
+&lt;p&gt;URL 접두어 방식에 다음과 같이 블로그 주소를 작성하고 계속을 누른다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196089916-a8cd16fb-0aed-4892-92eb-7c3880adb7e1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;그러면 인증 코드가 담겨있는 html 파일을 다운 받을 수 있는데, 사이트 소유권 확인을 위해 해당 파일을 다운받은 뒤 이를 repository에 업로드해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196115987-d1cb2f88-6558-442e-826a-4bbf3d9fd0a0.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;다운받은 파일을 이렇게 repository 최상위 디렉토리에 넣은 뒤,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196116195-ed7b5881-d746-4ffa-9d54-c91d5bb25b20.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음 명령어를 순서대로 입력해 업로드한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Register on google search conosole&quot;&lt;/span&gt;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196120843-f1befc4a-0998-4b00-ab9e-ed517ff0bb50.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;파일이 제대로 push된 것을 확인한 뒤 완료를 누르면 소유권 확인이 완료 됐다는 문구가 뜨게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196090861-075adb84-1b28-4581-ace0-98e6f87cdde3.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;속성으로 이동&lt;/strong&gt;을 누르면 이렇게 데이터를 처리하는 중이라는 문구가 뜬다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196091040-974a43a1-435d-45a1-8f22-8cb0a10e7ca9.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;구글 검색 결과에 웹 사이트가 나오려면, 구글 검색 엔진이 웹 사이트를 읽는 작업(크롤링)을 진행해야 하는데 이 과정이 완료돼야 검색했을 때 사이트가 나타나게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;구글 검색 엔진이 크롤링을 하려면, sitemap을 등록해야 한다. 왼쪽 사이드바의 색인-&amp;gt;Sitemaps를 누르면 다음과 같은 화면이 나온다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196092154-807471c4-4c1d-49c3-ba7a-3a609e0f62d0.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;새 사이트맵 추가&lt;/strong&gt; 부분에 sitemap.xml을 적고 제출을 누르면 sitemap이 등록된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196092606-269b6fe6-6ae5-4bfe-a700-4e0b3540dafd.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 크롤링이 끝날 때까지 며칠 기다리면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;➕ 2022/10/20&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196979614-5a323b35-1fc6-420d-bc26-02fb5b6bdbe5.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;i&gt; 3일 정도 뒤에 확인해보니 크롤링이 완료됐다. &lt;/i&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;google-analytics&quot;&gt;Google Analytics&lt;/h3&gt;
+
+&lt;p&gt;Google Search Console은 구글 검색 엔진을 통해 유입되는 방문자 정보를 확인할 수 있다면 Google Analytics는 네이버, 다음, 또는 직접 웹 사이트로 유입되는 방문자의 정보를 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;방문자의 도시, 유입 경로, 방문한 페이지 등의 정보를 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Google Analytics 등록하기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://analytics.google.com/analytics/web/provision/#/provision&quot;&gt;Google Analytics&lt;/a&gt; 👈 이 링크에 들어가서 측정 시작을 누른 뒤, 계정 이름에 깃허브 username을 적는다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196107482-c17230a4-8f9b-45d7-8523-3e4f0a8a1bab.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;속성 이름에는 깃허브 블로그 주소를 적는다.&lt;/p&gt;
+
+&lt;p&gt;추가로 시간대, 통화를 선택하고 비즈니스 정보까지 체크한 뒤 약관계약까지 동의하면 끝&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196107814-7b7d275f-8fb7-402f-a8b0-6285cc933f78.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;그러면 다음과 같은 화면이 나오는데, 우리는 웹 사이트를 연결할 예정이므로 플랫폼에서 웹을 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196108463-53187750-083f-495a-a5c8-d7092cda8169.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;웹사이트 URL을 적어주고 스트림 만들기를 클릭하면&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196108692-48037c47-22b4-4da6-b940-1451c64f2f86.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이렇게 측정 ID(Tracking ID)가 생성된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196108991-b6501b52-7d1c-4dac-a35c-ff84112b5f5c.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 측정 ID를 복사해 /_config.yml 파일의 tracking_id를 수정하면 끝이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Analytics&lt;/span&gt;
+analytics:
+  provider               : &lt;span class=&quot;s2&quot;&gt;&quot;google-gtag&quot;&lt;/span&gt;
+  google:
+    tracking_id          : &lt;span class=&quot;s2&quot;&gt;&quot;Tracking ID&quot;&lt;/span&gt;
+    anonymize_ip         : &lt;span class=&quot;c&quot;&gt;# true, false (default)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;왼쪽 사이드바에 있는 보고서를 클릭했을 때, 다음과 같이 지난 30분 동안의 사용자가 표시되면 연동이 완료된 것이다 👏&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196114796-bf266200-690a-43f1-828c-bd91eb180e02.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Blog" /><summary type="html">구글 검색 엔진, 애널리틱스 등록하는 방법 정리</summary></entry><entry><title type="html">[블로그] 3. 네이버, 다음 검색 엔진 등록</title><link href="http://localhost:4000/blog/2022/10/17/3.register-search-engine/" rel="alternate" type="text/html" title="[블로그] 3. 네이버, 다음 검색 엔진 등록" /><published>2022-10-17T00:00:00+09:00</published><updated>2022-10-17T00:00:00+09:00</updated><id>http://localhost:4000/blog/2022/10/17/3.register%20search%20engine</id><content type="html" xml:base="http://localhost:4000/blog/2022/10/17/3.register-search-engine/">&lt;h3 id=&quot;네이버-검색-엔진-등록&quot;&gt;네이버 검색 엔진 등록&lt;/h3&gt;
+
+&lt;p&gt;네이버 검색 엔진에서 사이트가 검색되도록 하기 위해서는 Google Search Console에 등록했던 것처럼 네이버 서치어드바이저를 등록해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://searchadvisor.naver.com/&quot;&gt;네이버 서치어드바이저&lt;/a&gt; 👈 이 링크에 들어가서 오른쪽 상단의 웹마스터 도구를 클릭하면, 사이트 등록 페이지가 나타난다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196124683-57783435-f773-4b61-92a1-5f5dd7190f41.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;해당 페이지에서 깃허브 블로그 주소를 넣고 엔터를 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196125700-dbec0f7c-85f1-4fe0-a811-cc9012dab1ee.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Google Search Console과 동일하게 html 파일을 업로드하여 소유자를 확인하는 방식이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196130691-0a966194-9557-4c0f-a426-7a37da338e59.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;파일을 repository 최상위 디렉토리로 옮긴 뒤&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196978459-c92b1312-0199-4f18-bacb-fd54122051f8.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;아래 git 명령어를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Register on naver search engine&quot;&lt;/span&gt;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196131492-3adeb8e7-3a7b-46c7-8bcf-6eb684bfdfc8.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이렇게 파일이 업로드 되었다면 3번 사이트 접속시, 404 Not Found 메시지가 안 뜰 것이다.&lt;/p&gt;
+
+&lt;p&gt;그러면 아래의 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; 소유 확인 &lt;/mark&gt;을 누르면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196131892-f40e6a3c-3be8-460c-b772-89d92bca1b9b.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이렇게 등록이 완료되면, 사이트 목록에 있는 사이트 주소를 클릭해 사이트 관리 페이지로 이동한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196132997-b41182ea-3798-4b01-b9d2-70725dce92b4.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 왼쪽 사이드바에 있는 요청 -&amp;gt; 웹페이지 수집을 클릭해 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; 확인 &lt;/mark&gt; 버튼을 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196133370-13ae8e37-6403-4d25-b737-ffae60d3620b.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막으로 요청 -&amp;gt; 사이트맵 제출에서 다음과 같이 sitemap.xml을 추가한 뒤 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; 확인 &lt;/mark&gt; 버튼을 누르면 끝이다.&lt;/p&gt;
+
+&lt;p&gt;![image]&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;다음-검색-엔진-등록&quot;&gt;다음 검색 엔진 등록&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://register.search.daum.net/index.daum&quot;&gt;Daum 검색 등록&lt;/a&gt; 👈 다음 검색 등록은 이 링크에서 url을 입력하고 &lt;mark style=&quot;background-color: #f5f0ff&quot;&gt; 확인 &lt;/mark&gt;을 누르면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196975892-5ab7d91a-00e5-4392-92e0-cbb778acaf40.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197085452-d632a77a-ba34-499e-b259-d1c443a48fbb.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;서비스 이용 약관에 동의한 뒤, 몇 가지 정보만 작성하면 끝이다 👏&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197085566-97e3ebee-c434-4ca1-9601-28b5f9feed32.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;➕ 2022/10/21&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197110043-c7ce7f23-7d97-498a-be37-6df3c9da91fb.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;i&gt; 하루 뒤에 이메일이 와서 확인해보니 정상적으로 등록된 것을 확인할 수 있었다. &lt;/i&gt;&lt;/center&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Blog" /><summary type="html">네이버, 다음 검색 엔진 등록하는 방법 정리</summary></entry></feed>
