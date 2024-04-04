@@ -1,4 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-03-19T17:05:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">서민석의 블로그</title><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><entry><title type="html">[블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기</title><link href="http://localhost:4000/blog/2023/11/14/6.multiple-github-accounts/" rel="alternate" type="text/html" title="[블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기" /><published>2023-11-14T00:00:00+09:00</published><updated>2023-11-14T00:00:00+09:00</updated><id>http://localhost:4000/blog/2023/11/14/6.multiple%20github%20accounts</id><content type="html" xml:base="http://localhost:4000/blog/2023/11/14/6.multiple-github-accounts/">&lt;h3 id=&quot;github-접속용-ssh-key-생성-및-등록&quot;&gt;Github 접속용 SSH Key 생성 및 등록&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-04-04T21:01:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">서민석의 블로그</title><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><entry><title type="html">[리뷰] 아마존 Renewed 매직 키보드 후기</title><link href="http://localhost:4000/review/2024/03/30/1.ipad-magic-keyboard/" rel="alternate" type="text/html" title="[리뷰] 아마존 Renewed 매직 키보드 후기" /><published>2024-03-30T00:00:00+09:00</published><updated>2024-03-30T00:00:00+09:00</updated><id>http://localhost:4000/review/2024/03/30/1.ipad%20magic%20keyboard</id><content type="html" xml:base="http://localhost:4000/review/2024/03/30/1.ipad-magic-keyboard/">&lt;p&gt;노트북 vs 아이패드를 고민하다가 매직 키보드까지 있으면 노트북을 대체할 수 있지 않을까하고 애플펜슬이랑 매직 키보드를 구매해서 사용했었다.&lt;/p&gt;
+
+&lt;p&gt;1년 정도 사용해보니까 필기보다 코딩할 일이 더 많았던 내 사용 패턴에서는 노트북을 대체할 수가 없어서 방출하고 노트북을 샀다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197185115-4e9b70e6-5f03-4afd-a1d7-6fc7fd25d8ff.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;del&gt; 다음 컴퓨터는 맥북이었다 &lt;/del&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;그 후 대학원에 입학하면서 논문 볼 때나 수업 필기할 때 사용하려고 아이패드를 다시 구매했고, 필기 위주로 아이패드를 사용해왔다.&lt;/p&gt;
+
+&lt;p&gt;근데 수업때 노트북을 들고가면 필기할 일이 생기고, 아이패드를 들고가면 노트북을 쓸 일이 생기니 매직 키보드가 아른거렸다··&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/9314da32-b71c-45f7-87e9-ddeecb8e6000&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;근데 이걸 50만원이나 주고 사는건 내가 생각해도 아닌 것 같아서 관망하고 있었는데&lt;/p&gt;
+
+&lt;p&gt;아마존에서 파는 공식 리퍼비쉬 제품을 135$ 정도에 살 수 있길래 후기를 폭풍 검색하고 괜찮은 것 같아서 구매했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://amzn.to/2na2SQq&quot;&gt;Amazon Renewed&lt;/a&gt;란?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;리퍼비쉬 제품이나 단순 개봉품 등을 아마존에서 검수한 제품으로 약 12inch(30cm)에서 떨어져 봤을 때 외관상 결함이 없는 제품으로, 아주 미세한 스크래치는 있을 수 있고 제품 박스가 없는 경우도 있을 수 있다고 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;아마존에서 파는 물건들 중에는 직배가 안되는 것도 있기 때문에 배대지(배송대행지)를 이용해야 하는 경우가 종종 있는데, 내가 구매한 매직 키보드의 경우 직접 배송이 가능했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/055c3099-52e5-4798-965f-a23b82f210f5&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;오른쪽에 밑에 있는 &lt;span style=&quot;background-color:#C0FFFF&quot;&gt; 다음으로부터 갱신된 개수 &lt;/span&gt;를 누르면 같은 제품을 판매하는 다른 셀러들을 확인할 수 있는데, 셀러 이름을 클릭해서 후기를 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/fccdad0b-4d48-4c7d-9ca3-7792209e4872&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;가격이 더 저렴한 셀러도 있었지만 물건을 못 받았다는 후기들이 좀 있어서 가장 리뷰가 좋은 셀러한테 구매했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;비용은 배송비까지해서 총 144.92$&lt;/p&gt;
+
+&lt;p&gt;우리나라 돈으로 197,932원이 들었다. &lt;del&gt;환율 실환가&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/1fc88d2b-4c14-4d4b-8d59-d8809235eba3&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/99eb1f05-3df7-428a-bb38-4d4b737a0612&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3/20에 구매해서 3/30에 도착했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/f80abf36-e288-4d17-87af-41ead189f483&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/c6ac205a-46fa-422a-8ab7-40f1ded0a0c3&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;조금 더럽긴 했지만 박스도 있었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;두근..&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/d4a2e513-ecd6-43aa-b59a-152c53370982&quot; alt=&quot;image&quot; /&gt;
+&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/9d55057d-857e-4af5-8169-24348ead801e&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;먼지가 조금 있긴 했지만 흠집이나 스크래치 같은 건 하나도 없었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/33dbd8a3-5286-4eee-b8a8-b0b3951c098e&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;center&gt; 편-안 &lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/a39a6540-c4de-4d33-b0c0-82e510648cdd&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;연결해서 확인해 보니 충전도 잘되고, 키보드도 잘된다 ㅎㅎ&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;후기 보니까 찍힘이 있는 제품을 받은 분들도 있어서 걱정했는데, 다행히 양품을 받은듯하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;매직 키보드 구매를 고려한다면 아마존 Renewed도 좋은 선택지인 것 같다.&lt;/p&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Review" /></entry><entry><title type="html">[블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기</title><link href="http://localhost:4000/blog/2023/11/14/6.multiple-github-accounts/" rel="alternate" type="text/html" title="[블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기" /><published>2023-11-14T00:00:00+09:00</published><updated>2023-11-14T00:00:00+09:00</updated><id>http://localhost:4000/blog/2023/11/14/6.multiple%20github%20accounts</id><content type="html" xml:base="http://localhost:4000/blog/2023/11/14/6.multiple-github-accounts/">&lt;h3 id=&quot;github-접속용-ssh-key-생성-및-등록&quot;&gt;Github 접속용 SSH Key 생성 및 등록&lt;/h3&gt;
 
 &lt;p&gt;SSH Key를 생성하기 전에 먼저 Git을 설치해야 한다 👉 &lt;a href=&quot;http://archive.today/6VtyG&quot;&gt;맥에서 Git 설치하기&lt;/a&gt;&lt;/p&gt;
 
