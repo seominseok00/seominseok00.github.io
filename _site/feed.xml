@@ -1,4 +1,416 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-06-04T11:14:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">서민석의 블로그</title><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><entry><title type="html">[리뷰] 스픽 100일 후기 (내돈내산)</title><link href="http://localhost:4000/review/2024/05/11/2.speak/" rel="alternate" type="text/html" title="[리뷰] 스픽 100일 후기 (내돈내산)" /><published>2024-05-11T00:00:00+09:00</published><updated>2024-05-11T00:00:00+09:00</updated><id>http://localhost:4000/review/2024/05/11/2.speak</id><content type="html" xml:base="http://localhost:4000/review/2024/05/11/2.speak/">&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/b052da8f-740d-4538-a40e-197e0d164cad&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-07-16T19:11:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">서민석의 블로그</title><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><entry><title type="html">CARLA 0.9.15 설치 [Windows 11]</title><link href="http://localhost:4000/carla/2024/07/09/1.CARLA-Installation-(Windows)/" rel="alternate" type="text/html" title="CARLA 0.9.15 설치 [Windows 11]" /><published>2024-07-09T00:00:00+09:00</published><updated>2024-07-09T00:00:00+09:00</updated><id>http://localhost:4000/carla/2024/07/09/1.CARLA%20Installation%20(Windows)</id><content type="html" xml:base="http://localhost:4000/carla/2024/07/09/1.CARLA-Installation-(Windows)/">&lt;p&gt;이 글은 공식 문서 &lt;a href=&quot;https://carla.readthedocs.io/en/latest/build_windows/&quot;&gt;Windows build&lt;/a&gt;를 자세하게 설명한 글로, 아래 포스팅들도 추가로 참고했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;블로그 글이 지워질 경우를 대비해서 아카이브 해놓았다&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://archive.today/tN8Rh&quot;&gt;CARLA 설치 0.9.13&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://archive.today/S8Kch&quot;&gt;Windows에서 make 명령어 설치 및 이용 방법&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;CARLA 공식 문서는 대체적으로 설명이 잘 돼 있는 편이다.&lt;/p&gt;
+
+&lt;p&gt;대체적으로..&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/a9b0b3ab-ef8b-497b-a64b-4542a3be65df&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;center&gt;RoadRunner로 만든 맵&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;RoadRunner로 만든 custom map을 빌드하기 위해 CARLA를 설치 중인데, 우분투에서 하다가 계속 에러가 발생해서 윈도우에서 설치를 진행했다.&lt;/p&gt;
+
+&lt;p&gt;윈도우도 계속 에러나서 하루종일 낑낑대다가 간신히 성공해서 설치 방법과 에러 해결 과정을 정리해봤다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;system-requirements&quot;&gt;System requirements&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;64bit 시스템&lt;/li&gt;
+  &lt;li&gt;165GB 이상의 저장 공간&lt;/li&gt;
+  &lt;li&gt;적절한 GPU (최소 6GB 이상의 GPU 메모리)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;내가 설치한 환경은 다음과 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Windows 11&lt;/li&gt;
+  &lt;li&gt;NVIDIA GeForce GTX 1660 Super 6GB&lt;/li&gt;
+  &lt;li&gt;RAM 16GB&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;software-requirements&quot;&gt;Software requirements&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://cmake.org/files/&quot;&gt;CMake&lt;/a&gt;: 3.15 버전 이상 (나는 3.15 버전을 설치했다)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://git-scm.com/downloads&quot;&gt;Git&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sourceforge.net/projects/gnuwin32/files/make/3.81/make-3.81.exe/download?use_mirror=jaist&amp;amp;download=&quot;&gt;Make&lt;/a&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Make의 경우 설치하고난 다음, 설치 경로(C:\Program Files (x86)\GnuWin32\bin)를 환경변수의 path에 추가해야 한다.&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/f1e06c5b-3308-4a01-9a27-c99bee3dfa28&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;이후 cmd 창에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;make -v&lt;/code&gt;를 입력했을 때 다음과 같이 나오면 정상적으로 설치된 것이다.&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/1eb521e6-326a-4533-a652-8a92185142e9&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.7-zip.org/&quot;&gt;7Zip&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.python.org/downloads/&quot;&gt;Python3&lt;/a&gt; (나는 3.12.4를 설치했다)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;파이썬을 설치하고 난 뒤, pip를 업그레이드 해주고 아래 dependencies를 설치한다.&lt;/p&gt;
+
+        &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--upgrade&lt;/span&gt; pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+
+        &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--user&lt;/span&gt; setuptools
+pip3 &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--user&lt;/span&gt; wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://visualstudio.microsoft.com/ko/thank-you-downloading-visual-studio/?sku=Community&amp;amp;rel=16&amp;amp;ref=developerinsider.co&quot;&gt;Visual Studio 2019 Community&lt;/a&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;❗️7/10일자로 갑자기 마이크로소프트에서 Visual Studio 2019 버전을 다운로드하는 것을 막았다.&lt;/p&gt;
+
+      &lt;p&gt;2022 버전으로 동일하게 진행해 봤는데, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UE4.sln&lt;/code&gt; 파일 빌드까지는 되는데, 이후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;make launch&lt;/code&gt; 명령어를 실행하면&lt;/p&gt;
+
+      &lt;p&gt;Visual Studio 16 2019 could not find any instance of Visual Studio 라는 에러가 발생했다.&lt;/p&gt;
+
+      &lt;p&gt;그래서 Visual Studio 2019 installer를 찾아서 설치하니 해결됐다.&lt;/p&gt;
+
+      &lt;p&gt;2019 버전은 &lt;a href=&quot;https://reddit.com/r/VisualStudio/comments/q4dm0u/cant_download_visual_studio_community_19/?rdt=64735&quot;&gt;레딧 쓰레드&lt;/a&gt;의 댓글에 있는 링크에서 다운 받을 수 있다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;총 세 개를 설치해야 하는데,&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;C++를 사용한 데스크톱 개발&lt;/strong&gt;&lt;/p&gt;
+
+        &lt;p&gt;오른쪽 설치 세부 정보에서 &lt;strong&gt;MSVC v140 - VS 2015 C++ 빌드 도구(v14.00)&lt;/strong&gt; 선택&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/b35ae8f7-6deb-4937-ad8e-a790991f5391&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;.NET 데스크톱 개발&lt;/strong&gt;&lt;/p&gt;
+
+        &lt;p&gt;마찬가지로 오른쪽에서 &lt;strong&gt;.NET Framework 4.6.2 개발 도구&lt;/strong&gt; 선택&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/aa00791a-7783-44ff-b9c0-fbcf03294a44&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;C++를 사용한 게임 개발&lt;/strong&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/1835b25f-1530-4614-a8a8-f082d420c9df&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;unreal-engine&quot;&gt;Unreal Engine&lt;/h3&gt;
+
+&lt;p&gt;이제 Unreal Engine 및 CARLA 설치를 위한 준비가 끝났다.&lt;/p&gt;
+
+&lt;p&gt;먼저 Unreal Engine을 설치하자.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Unreal Engine을 git clone 하기 위해서는 Github 접근 권한을 얻어야 하는데 이 &lt;a href=&quot;https://www.unrealengine.com/en-US/ue-on-github&quot;&gt;문서&lt;/a&gt;를 따라 개발자 등록을 한 뒤, git clone을 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone &lt;span class=&quot;nt&quot;&gt;--depth&lt;/span&gt; 1 &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; carla https://github.com/CarlaUnreal/UnrealEngine.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 clone한 폴더로 이동한 뒤, 아래 명령어를 순차적으로 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;UnrealEngine
+Setup.bat
+GenerateProjectFiles.bat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 명령어들이 성공적으로 수행됐다면, 다음과 같이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UE4.sln&lt;/code&gt; 파일이 생성된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/2c328183-368e-4923-9927-c4e749f531c0&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;그러면 마우스 우클릭 -&amp;gt; 연결 프로그램 -&amp;gt; Microsoft Visual Studio 2019를 클릭해서 해당 파일을 연다. (나는 이전에 열었었기 때문에 아이콘이 다르다)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/bb09fda6-a8f8-4e0d-b564-0017d7143e69&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 위쪽에 있는 툴바에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Development Editor&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Win64&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UnrealBuildTool&lt;/code&gt;을 선택한 다음,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/42291291-7092-4383-8e71-ba2b45449364&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;솔루션 탐색기에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UE4&lt;/code&gt;를 우클릭하여 빌드한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/f7bda6d1-9e3b-43c6-8ee2-f9c7d83a7b75&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;빌드가 정상적으로 완료되면 아래와 같이 성공 메시지가 뜨게 되고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UnrealEngine\Engine\Binaries\Win64&lt;/code&gt; 디렉토리에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UE4Editor.exe&lt;/code&gt; 파일이 생기게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/70637b4c-66bb-4846-887f-f58e35baafd4&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 환경 변수에 가서 사용자 변수 새로 만들기를 클릭,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/04937ec1-dac1-4395-aa2d-08327e108be8&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음과 같이 UE4_ROOT 변수를 생성해주면 Unreal Engine 설치 과정은 끝난다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/0cd0d1fe-3639-4e53-8322-5aa4a6f564f3&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;carla&quot;&gt;CARLA&lt;/h3&gt;
+
+&lt;p&gt;CARLA 깃허브를 clone 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/carla-simulator/carla
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 clone한 폴더로 이동한 다음, 아래 명령어를 실행하여 assets을 다운 받는다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;carla
+Update.bat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Progress bar 같은게 안나와서 진행되고 있나 싶을텐데, 한 1시간 정도 걸렸던 것 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;build-carla&quot;&gt;Build CARLA&lt;/h3&gt;
+
+&lt;p&gt;이제 CARLA를 빌드할건데, 이때 주의할 점이 cmd 창이 아닌 &lt;span style=&quot;color:red&quot;&gt;x64 Native Tools Command Prompt for VS 2019&lt;/span&gt;로 실행해야 한다는 점이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Windows&lt;/code&gt; 키를 눌러 x64를 검색하면 다음과 같은 프롬프트가 나오는데, 이걸 실행한 다음 아래 프로세스를 따라하면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/a10861dc-539a-4501-bcdb-038eb4a4347d&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;먼저 앞서 clone한 CARLA 루트 디렉토리로 이동한 다음, 아래 명령어를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;arla
+make PythonAPI
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;나는 이미 실행했기 때문에 스크린샷은 없지만 다음과 같은 에러가 발생했었다.&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;에러 메시지&lt;/summary&gt;
+
+  &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;arla&amp;gt;make PythonAPI
+-[BuildUE4Plugins]: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Batch params]: &lt;span class=&quot;nt&quot;&gt;--build&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
+HEAD is now at 260273d Correct descriptor
+-[BuildUE4Plugins]: STREETMAP has been successfully installed &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;C:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;sers&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;eominseok&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;arla&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;nreal&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;arlaUE4&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\P&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;lugins&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+-[Setup]: [Batch params]: --boost-toolset msvc-14.2 --generator &quot;&quot; --all
+-[Setup]: Asynchronous jobs:  16
+-[Setup]: Boost toolset:      msvc-14.2
+-[Setup]: Generator:          &quot;&lt;/span&gt;Visual Studio 16 2019&lt;span class=&quot;s2&quot;&gt;&quot;
+-[Setup]: Install directory:  &quot;&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;arla&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;uild&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;
+-[Setup]: Installing zlib...
+    -[install_zlib]: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Batch params]: &lt;span class=&quot;nt&quot;&gt;--build-dir&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;C:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;sers&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;eominseok&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;arla&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;uild&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+    -[install_zlib]: Not downloading zlib because already exists the folder &quot;&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;arla&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;uild&lt;span class=&quot;se&quot;&gt;\z&lt;/span&gt;lib-source&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; The C compiler identification is MSVC 19.0.24247.2
+&lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; Check &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;working C compiler: D:/Program Files &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x86&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;/Microsoft Visual Studio 14.0/VC/bin/amd64/cl.exe
+&lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; Check &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;working C compiler: D:/Program Files &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x86&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;/Microsoft Visual Studio 14.0/VC/bin/amd64/cl.exe &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; broken
+CMake Error at C:/Program Files/CMake/share/cmake-3.15/Modules/CMakeTestCCompiler.cmake:60 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;message&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+  The C compiler
+
+    &lt;span class=&quot;s2&quot;&gt;&quot;D:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/cl.exe&quot;&lt;/span&gt;
+
+  is not able to compile a simple &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;program.
+
+  It fails with the following output:
+
+    Change Dir: C:/Users/seominseok/carla/Build/zlib-source/build/CMakeFiles/CMakeTmp
+
+    Run Build Command&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:nmake /nologo cmTC_41123&lt;span class=&quot;se&quot;&gt;\f&lt;/span&gt;ast &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;       &lt;span class=&quot;s2&quot;&gt;&quot;D:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\P&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;rogram Files (x86)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\M&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;icrosoft Visual Studio 14.0&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\V&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;IN&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\a&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;md64&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;make.exe&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; CMakeFiles&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;mTC_41123.dir&lt;span class=&quot;se&quot;&gt;\b&lt;/span&gt;uild.make /nologo &lt;span class=&quot;nt&quot;&gt;-L&lt;/span&gt;                  CMakeFiles&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;mTC_41123.dir&lt;span class=&quot;se&quot;&gt;\b&lt;/span&gt;uild
+    Building C object CMakeFiles/cmTC_41123.dir/testCCompiler.c.obj
+        &lt;span class=&quot;s2&quot;&gt;&quot;D:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\P&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;rogram Files (x86)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\M&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ICROS~1.0&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\V&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\b&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\a&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;md64&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;l.exe&quot;&lt;/span&gt; @C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\S&lt;/span&gt;EOMIN~1&lt;span class=&quot;se&quot;&gt;\A&lt;/span&gt;ppData&lt;span class=&quot;se&quot;&gt;\L&lt;/span&gt;ocal&lt;span class=&quot;se&quot;&gt;\T&lt;/span&gt;emp&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;m1AC6.tmp
+    testCCompiler.c
+    Linking C executable cmTC_41123.exe
+        &lt;span class=&quot;s2&quot;&gt;&quot;C:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\P&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;rogram Files&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Make&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\b&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;make.exe&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-E&lt;/span&gt; vs_link_exe &lt;span class=&quot;nt&quot;&gt;--intdir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;CMakeFiles&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;mTC_41123.dir &lt;span class=&quot;nt&quot;&gt;--rc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;rc &lt;span class=&quot;nt&quot;&gt;--mt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;CMAKE_MT-NOTFOUND &lt;span class=&quot;nt&quot;&gt;--manifests&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;D:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\P&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;rogram Files (x86)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\M&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ICROS~1.0&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\V&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\b&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\a&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;md64&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\l&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ink.exe&quot;&lt;/span&gt; /nologo @CMakeFiles&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;mTC_41123.dir&lt;span class=&quot;se&quot;&gt;\o&lt;/span&gt;bjects1.rsp @C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\S&lt;/span&gt;EOMIN~1&lt;span class=&quot;se&quot;&gt;\A&lt;/span&gt;ppData&lt;span class=&quot;se&quot;&gt;\L&lt;/span&gt;ocal&lt;span class=&quot;se&quot;&gt;\T&lt;/span&gt;emp&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;m1C3E.tmp
+    RC Pass 1: &lt;span class=&quot;nb&quot;&gt;command&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rc /fo CMakeFiles&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;mTC_41123.dir/manifest.res CMakeFiles&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;mTC_41123.dir/manifest.rc&quot;&lt;/span&gt; failed &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;code 0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; with the following output:
+    지정된 파일을 찾을 수 없습니다NMAKE : fatal error U1077: &lt;span class=&quot;s1&quot;&gt;'&quot;C:\Program Files\CMake\bin\cmake.exe&quot;'&lt;/span&gt; : &lt;span class=&quot;s1&quot;&gt;'0xffffffff'&lt;/span&gt; 반 환 코드입니다.
+    Stop.
+    NMAKE : fatal error U1077: &lt;span class=&quot;s1&quot;&gt;'&quot;D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\BIN\amd64\nmake.exe&quot;'&lt;/span&gt; : &lt;span class=&quot;s1&quot;&gt;'0x2'&lt;/span&gt; 반환 코드입니다.
+    Stop.
+
+
+
+
+
+  CMake will not be able to correctly generate this project.
+Call Stack &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;most recent call first&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+  CMakeLists.txt:4 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;project&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; Configuring incomplete, errors occurred!
+See also &lt;span class=&quot;s2&quot;&gt;&quot;C:/Users/seominseok/carla/Build/zlib-source/build/CMakeFiles/CMakeOutput.log&quot;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+See also &lt;span class=&quot;s2&quot;&gt;&quot;C:/Users/seominseok/carla/Build/zlib-source/build/CMakeFiles/CMakeError.log&quot;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+
+    -[install_zlib]: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;CMAKE ERROR] An error ocurred &lt;span class=&quot;k&quot;&gt;while &lt;/span&gt;executing cmake command.
+    -[install_zlib]: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;CMAKE ERROR] Possible causes:
+    -[install_zlib]:                - Make sure &lt;span class=&quot;s2&quot;&gt;&quot;CMake&quot;&lt;/span&gt; is installed.
+    -[install_zlib]:                - Make sure it is available on your Windows &lt;span class=&quot;s2&quot;&gt;&quot;path&quot;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+    -[install_zlib]:                - Make sure you have cmake 3.12.4 or higher installed.
+    -[install_zlib]: Exiting with error...
+
+-[Setup]:
+   Ok, and error ocurred, don&lt;span class=&quot;s1&quot;&gt;'t panic
+   We have different platforms where you can find some help :)
+
+   - Make sure you have read the documentation:
+       http://carla.readthedocs.io/en/latest/how_to_build_on_windows/
+
+   - If the problem persists, you can ask on our Github'&lt;/span&gt;s &lt;span class=&quot;s2&quot;&gt;&quot;Building on Windows&quot;&lt;/span&gt; issue:
+       https://github.com/carla-simulator/carla/issues/21
+
+   - Or just use our Discord channel
+       We&lt;span class=&quot;s1&quot;&gt;'ll be glad to help you there :)
+       https://discord.gg/42KJdRj
+make: *** [setup] 오류 1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+
+&lt;/details&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;처음에는 CMake 쪽에서 에러가 난 줄 알았는데, 찾아보니까 zlib이 제대로 설치가 안돼서 에러가 발생했었다는 글들이 있어서 에러 메시지를 다시 확인해보니&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-[Setup]: Installing zlib...
+    -[install_zlib]: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Batch params]: &lt;span class=&quot;nt&quot;&gt;--build-dir&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;C:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;sers&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;eominseok&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;arla&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;uild&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+    -[install_zlib]: Not downloading zlib because already exists the folder &quot;&lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;arla&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;uild&lt;span class=&quot;se&quot;&gt;\z&lt;/span&gt;lib-source&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;나도 뭔가 zlib 설치 과정에서 문제가 생긴 것 같았다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;CARLA Discord에서 찾아보니, 이 &lt;a href=&quot;https://github.com/carla-simulator/carla/discussions/5351&quot;&gt;issue&lt;/a&gt;를 보고 해결됐다는 사람이 있어서 해보니까, 나도 에러가 더 이상 발생하지 않고 정상적으로 실행됐다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;해결 방법은 &lt;a href=&quot;https://drive.google.com/file/d/1Q1TJWZsTPpXfUqH1cjJrMD4neoTGHGDl/view?usp=sharing&quot;&gt;링크&lt;/a&gt;에 있는 파일을 다운받아 압축을 해제한 다음, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;carla\Build&lt;/code&gt; 폴더에 넣어주면 된다.&lt;/p&gt;
+
+&lt;p&gt;이때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Build&lt;/code&gt; 폴더에는 다른 파일들을 모두 지우고, 해당 파일만 넣어준 다음 다시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;make PythonAPI&lt;/code&gt; 명령어를 실행하면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;설치가 정상적으로 완료되면 다음과 같이 성공적으로 빌드가 완료됐다고 뜨게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;뭔가 에러 메시지 같은게 잔뜩 있는 것 같지만 실행해보니까 잘됐다&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/6557737e-55a6-488e-811c-2b1a858c9f03&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막으로 아래 명령어를 실행하면 다음과 같이 Unreal Engine이 실행된다. (모든 것이 정상적으로 수행됐다면)&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make launch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/86ebf9a6-c582-45da-bb73-81aa941bdc1b&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/da410cda-f46b-4d65-9c10-40a093e8bdf9&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;➕&lt;/p&gt;
+
+&lt;p&gt;처음에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;make launch&lt;/code&gt; 명령어를 실행했을 때 아래와 같은 에러가 떴었는데 다시 실행하니 저런 메시지가 안 뜨고 정상적으로 실행됐다.&lt;/p&gt;
+
+&lt;p&gt;혹시라도 아래 메시지가 뜬다면, 다시 실행해보시길..&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;에러 메시지&lt;/summary&gt;
+
+  &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  C:/Users/seominseok/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Walker/WalkerController.cpp&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;28&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: warning C4458: &lt;span class=&quot;s1&quot;&gt;'Character'&lt;/span&gt; 선언은 클래스 멤버를 숨깁니다.
+  C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;nrealEngine&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;ngine&lt;span class=&quot;se&quot;&gt;\S&lt;/span&gt;ource&lt;span class=&quot;se&quot;&gt;\R&lt;/span&gt;untime&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;ngine&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;lasses&lt;span class=&quot;se&quot;&gt;\G&lt;/span&gt;ameFramework/Controller.h&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;76&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: note: &lt;span class=&quot;s1&quot;&gt;'AController::Character'&lt;/span&gt; 선언을 참조하십시오.
+  C:/Users/seominseok/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Walker/WalkerController.cpp&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;54&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: warning C4458: &lt;span class=&quot;s1&quot;&gt;'Character'&lt;/span&gt; 선언은 클래스 멤버를 숨깁니다.
+  C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;nrealEngine&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;ngine&lt;span class=&quot;se&quot;&gt;\S&lt;/span&gt;ource&lt;span class=&quot;se&quot;&gt;\R&lt;/span&gt;untime&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;ngine&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;lasses&lt;span class=&quot;se&quot;&gt;\G&lt;/span&gt;ameFramework/Controller.h&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;76&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: note: &lt;span class=&quot;s1&quot;&gt;'AController::Character'&lt;/span&gt; 선언을 참조하십시오.
+  C:/Users/seominseok/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Walker/WalkerController.cpp&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;89&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: warning C4458: &lt;span class=&quot;s1&quot;&gt;'Character'&lt;/span&gt; 선언은 클래스 멤버를 숨깁니다.
+  C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;nrealEngine&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;ngine&lt;span class=&quot;se&quot;&gt;\S&lt;/span&gt;ource&lt;span class=&quot;se&quot;&gt;\R&lt;/span&gt;untime&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;ngine&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;lasses&lt;span class=&quot;se&quot;&gt;\G&lt;/span&gt;ameFramework/Controller.h&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;76&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: note: &lt;span class=&quot;s1&quot;&gt;'AController::Character'&lt;/span&gt; 선언을 참조하십시오.
+  C:/Users/seominseok/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Walker/WalkerController.cpp&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;130&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: warning C4458: &lt;span class=&quot;s1&quot;&gt;'Character'&lt;/span&gt; 선언은 클래스 멤버를 숨깁니다.
+  C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;nrealEngine&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;ngine&lt;span class=&quot;se&quot;&gt;\S&lt;/span&gt;ource&lt;span class=&quot;se&quot;&gt;\R&lt;/span&gt;untime&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;ngine&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;lasses&lt;span class=&quot;se&quot;&gt;\G&lt;/span&gt;ameFramework/Controller.h&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;76&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: note: &lt;span class=&quot;s1&quot;&gt;'AController::Character'&lt;/span&gt; 선언을 참조하십시오.
+  C:/Users/seominseok/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Walker/WalkerController.cpp&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;150&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: warning C4458: &lt;span class=&quot;s1&quot;&gt;'Character'&lt;/span&gt; 선언은 클래스 멤버를 숨깁니다.
+  C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;nrealEngine&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;ngine&lt;span class=&quot;se&quot;&gt;\S&lt;/span&gt;ource&lt;span class=&quot;se&quot;&gt;\R&lt;/span&gt;untime&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;ngine&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;lasses&lt;span class=&quot;se&quot;&gt;\G&lt;/span&gt;ameFramework/Controller.h&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;76&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: note: &lt;span class=&quot;s1&quot;&gt;'AController::Character'&lt;/span&gt; 선언을 참조하십시오.
+  C:/Users/seominseok/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Walker/WalkerController.cpp&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;173&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: warning C4458: &lt;span class=&quot;s1&quot;&gt;'Character'&lt;/span&gt; 선언은 클래스 멤버를 숨깁니다.
+  C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;nrealEngine&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;ngine&lt;span class=&quot;se&quot;&gt;\S&lt;/span&gt;ource&lt;span class=&quot;se&quot;&gt;\R&lt;/span&gt;untime&lt;span class=&quot;se&quot;&gt;\E&lt;/span&gt;ngine&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;lasses&lt;span class=&quot;se&quot;&gt;\G&lt;/span&gt;ameFramework/Controller.h&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;76&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: note: &lt;span class=&quot;s1&quot;&gt;'AController::Character'&lt;/span&gt; 선언을 참조하십시오.
+  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1941/2311] UE4Editor-Carla.lib
+     C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;arla&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;nreal&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;arlaUE4&lt;span class=&quot;se&quot;&gt;\P&lt;/span&gt;lugins&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;arla&lt;span class=&quot;se&quot;&gt;\I&lt;/span&gt;ntermediate&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;uild&lt;span class=&quot;se&quot;&gt;\W&lt;/span&gt;in64&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;E4Editor&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;evelopment&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;arla&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;E4Editor-Carla.lib 라이브러리 및 C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;eominseok&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;arla&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;nreal&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;arlaUE4&lt;span class=&quot;se&quot;&gt;\P&lt;/span&gt;lugins&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;arla&lt;span class=&quot;se&quot;&gt;\I&lt;/span&gt;ntermediate&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;uild&lt;span class=&quot;se&quot;&gt;\W&lt;/span&gt;in64&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;E4Editor&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;evelopment&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;arla&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;E4Editor-Carla.exp 개체를 생성하고 있습니다.
+make: &lt;span class=&quot;k&quot;&gt;***&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;CarlaUE4Editor] 오류 6
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+
+&lt;/details&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tip&quot;&gt;Tip&lt;/h3&gt;
+
+&lt;p&gt;마지막으로, 내가 포스팅에서 다룬 에러들말고 다양한 에러가 발생할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/carla-simulator/carla/issues&quot;&gt;Github Issue&lt;/a&gt; 탭이나, &lt;a href=&quot;https://discord.com/invite/8kqACuC&quot;&gt;CARLA Discord&lt;/a&gt; 서버에 가면 비슷한 상황을 겪은 사람들의 해결 방안을 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;깃허브 이슈 탭의 검색 성능이 별로 좋지 않기 때문에, 먼저 디스코드 서버로 가서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;help&lt;/code&gt;나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PLATFORMS&lt;/code&gt; 카테고리에서 사용하고 있는 운영체제 채널로 간다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/36ac806b-6d9f-46bd-8504-4b7ce67afb32&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctrl + F&lt;/code&gt;를 누르고, 에러 메시지 중에서 일부를 검색하면 이렇게 이전에 질문한 사람들의 글이 보인다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/c20bba33-93bf-4d5f-909d-a9ca991737ab&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;해당 질문의 답변들을 타고가다 보면 해결 방법을 찾을 수 있다.&lt;/p&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="CARLA" /><summary type="html">윈도우11에 CARLA 0.9.15 설치하기</summary></entry><entry><title type="html">[리뷰] 스픽 100일 후기 (내돈내산)</title><link href="http://localhost:4000/review/2024/05/11/2.speak/" rel="alternate" type="text/html" title="[리뷰] 스픽 100일 후기 (내돈내산)" /><published>2024-05-11T00:00:00+09:00</published><updated>2024-05-11T00:00:00+09:00</updated><id>http://localhost:4000/review/2024/05/11/2.speak</id><content type="html" xml:base="http://localhost:4000/review/2024/05/11/2.speak/">&lt;p&gt;&lt;img src=&quot;https://github.com/seominseok00/comments/assets/110466566/b052da8f-740d-4538-a40e-197e0d164cad&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;center&gt; 내돈내산 &lt;/center&gt;
 
@@ -626,7 +1038,90 @@ rbenv versions
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197314902-1eb60678-78eb-46d1-8630-6dec757d7fe1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
-&lt;center&gt;&lt;i&gt;❗️주소창이 127.0.0.1.4000인지 확인하자 &lt;/i&gt;&lt;/center&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Blog" /><summary type="html">M1 맥북 깃허브 블로그 로컬 호스팅 방법 정리</summary></entry><entry><title type="html">[블로그] 2.구글 검색 엔진, 애널리틱스 등록</title><link href="http://localhost:4000/blog/2022/10/17/2.google-search-and-analytics/" rel="alternate" type="text/html" title="[블로그] 2.구글 검색 엔진, 애널리틱스 등록" /><published>2022-10-17T00:00:00+09:00</published><updated>2022-10-17T00:00:00+09:00</updated><id>http://localhost:4000/blog/2022/10/17/2.google%20search%20and%20analytics</id><content type="html" xml:base="http://localhost:4000/blog/2022/10/17/2.google-search-and-analytics/">&lt;h3 id=&quot;google-search-console&quot;&gt;Google Search Console&lt;/h3&gt;
+&lt;center&gt;&lt;i&gt;❗️주소창이 127.0.0.1.4000인지 확인하자 &lt;/i&gt;&lt;/center&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Blog" /><summary type="html">M1 맥북 깃허브 블로그 로컬 호스팅 방법 정리</summary></entry><entry><title type="html">[블로그] 3. 네이버, 다음 검색 엔진 등록</title><link href="http://localhost:4000/blog/2022/10/17/3.register-search-engine/" rel="alternate" type="text/html" title="[블로그] 3. 네이버, 다음 검색 엔진 등록" /><published>2022-10-17T00:00:00+09:00</published><updated>2022-10-17T00:00:00+09:00</updated><id>http://localhost:4000/blog/2022/10/17/3.register%20search%20engine</id><content type="html" xml:base="http://localhost:4000/blog/2022/10/17/3.register-search-engine/">&lt;h3 id=&quot;네이버-검색-엔진-등록&quot;&gt;네이버 검색 엔진 등록&lt;/h3&gt;
+
+&lt;p&gt;네이버 검색 엔진에서 사이트가 검색되도록 하기 위해서는 Google Search Console에 등록했던 것처럼 네이버 서치어드바이저를 등록해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://searchadvisor.naver.com/&quot;&gt;네이버 서치어드바이저&lt;/a&gt; 👈 이 링크에 들어가서 오른쪽 상단의 웹마스터 도구를 클릭하면, 사이트 등록 페이지가 나타난다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196124683-57783435-f773-4b61-92a1-5f5dd7190f41.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;해당 페이지에서 깃허브 블로그 주소를 넣고 엔터를 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196125700-dbec0f7c-85f1-4fe0-a811-cc9012dab1ee.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Google Search Console과 동일하게 html 파일을 업로드하여 소유자를 확인하는 방식이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196130691-0a966194-9557-4c0f-a426-7a37da338e59.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;파일을 repository 최상위 디렉토리로 옮긴 뒤&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196978459-c92b1312-0199-4f18-bacb-fd54122051f8.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;아래 git 명령어를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Register on naver search engine&quot;&lt;/span&gt;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196131492-3adeb8e7-3a7b-46c7-8bcf-6eb684bfdfc8.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이렇게 파일이 업로드 되었다면 3번 사이트 접속시, 404 Not Found 메시지가 안 뜰 것이다.&lt;/p&gt;
+
+&lt;p&gt;그러면 아래의 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; 소유 확인 &lt;/mark&gt;을 누르면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196131892-f40e6a3c-3be8-460c-b772-89d92bca1b9b.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이렇게 등록이 완료되면, 사이트 목록에 있는 사이트 주소를 클릭해 사이트 관리 페이지로 이동한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196132997-b41182ea-3798-4b01-b9d2-70725dce92b4.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 왼쪽 사이드바에 있는 요청 -&amp;gt; 웹페이지 수집을 클릭해 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; 확인 &lt;/mark&gt; 버튼을 클릭한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196133370-13ae8e37-6403-4d25-b737-ffae60d3620b.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막으로 요청 -&amp;gt; 사이트맵 제출에서 다음과 같이 sitemap.xml을 추가한 뒤 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; 확인 &lt;/mark&gt; 버튼을 누르면 끝이다.&lt;/p&gt;
+
+&lt;p&gt;![image]&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;다음-검색-엔진-등록&quot;&gt;다음 검색 엔진 등록&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://register.search.daum.net/index.daum&quot;&gt;Daum 검색 등록&lt;/a&gt; 👈 다음 검색 등록은 이 링크에서 url을 입력하고 &lt;mark style=&quot;background-color: #f5f0ff&quot;&gt; 확인 &lt;/mark&gt;을 누르면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196975892-5ab7d91a-00e5-4392-92e0-cbb778acaf40.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197085452-d632a77a-ba34-499e-b259-d1c443a48fbb.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;서비스 이용 약관에 동의한 뒤, 몇 가지 정보만 작성하면 끝이다 👏&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197085566-97e3ebee-c434-4ca1-9601-28b5f9feed32.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;➕ 2022/10/21&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197110043-c7ce7f23-7d97-498a-be37-6df3c9da91fb.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;i&gt; 하루 뒤에 이메일이 와서 확인해보니 정상적으로 등록된 것을 확인할 수 있었다. &lt;/i&gt;&lt;/center&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Blog" /><summary type="html">네이버, 다음 검색 엔진 등록하는 방법 정리</summary></entry><entry><title type="html">[블로그] 2.구글 검색 엔진, 애널리틱스 등록</title><link href="http://localhost:4000/blog/2022/10/17/2.google-search-and-analytics/" rel="alternate" type="text/html" title="[블로그] 2.구글 검색 엔진, 애널리틱스 등록" /><published>2022-10-17T00:00:00+09:00</published><updated>2022-10-17T00:00:00+09:00</updated><id>http://localhost:4000/blog/2022/10/17/2.google%20search%20and%20analytics</id><content type="html" xml:base="http://localhost:4000/blog/2022/10/17/2.google-search-and-analytics/">&lt;h3 id=&quot;google-search-console&quot;&gt;Google Search Console&lt;/h3&gt;
 
 &lt;p&gt;Google Search Console은 구글 검색 엔진에서 웹 사이트가 검색되도록 등록해주고, 사용자가 어떤 검색어를 통해 내 사이트를 방문하는지 알려주는 웹 서비스이다.&lt;/p&gt;
 
@@ -1007,87 +1502,4 @@ git push origin master
 &lt;pre&gt;&lt;code class=&quot;language-rbash&quot;&gt;git add .
 git commit -m &quot;.DS_Store remove&quot;
 git push origin master
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Blog" /><summary type="html">깃허브 블로그 생성 방법 정리</summary></entry><entry><title type="html">[블로그] 3. 네이버, 다음 검색 엔진 등록</title><link href="http://localhost:4000/blog/2022/10/17/3.register-search-engine/" rel="alternate" type="text/html" title="[블로그] 3. 네이버, 다음 검색 엔진 등록" /><published>2022-10-17T00:00:00+09:00</published><updated>2022-10-17T00:00:00+09:00</updated><id>http://localhost:4000/blog/2022/10/17/3.register%20search%20engine</id><content type="html" xml:base="http://localhost:4000/blog/2022/10/17/3.register-search-engine/">&lt;h3 id=&quot;네이버-검색-엔진-등록&quot;&gt;네이버 검색 엔진 등록&lt;/h3&gt;
-
-&lt;p&gt;네이버 검색 엔진에서 사이트가 검색되도록 하기 위해서는 Google Search Console에 등록했던 것처럼 네이버 서치어드바이저를 등록해야 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://searchadvisor.naver.com/&quot;&gt;네이버 서치어드바이저&lt;/a&gt; 👈 이 링크에 들어가서 오른쪽 상단의 웹마스터 도구를 클릭하면, 사이트 등록 페이지가 나타난다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196124683-57783435-f773-4b61-92a1-5f5dd7190f41.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;해당 페이지에서 깃허브 블로그 주소를 넣고 엔터를 클릭한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196125700-dbec0f7c-85f1-4fe0-a811-cc9012dab1ee.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Google Search Console과 동일하게 html 파일을 업로드하여 소유자를 확인하는 방식이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196130691-0a966194-9557-4c0f-a426-7a37da338e59.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;파일을 repository 최상위 디렉토리로 옮긴 뒤&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196978459-c92b1312-0199-4f18-bacb-fd54122051f8.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;아래 git 명령어를 실행한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Register on naver search engine&quot;&lt;/span&gt;
-git push origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196131492-3adeb8e7-3a7b-46c7-8bcf-6eb684bfdfc8.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이렇게 파일이 업로드 되었다면 3번 사이트 접속시, 404 Not Found 메시지가 안 뜰 것이다.&lt;/p&gt;
-
-&lt;p&gt;그러면 아래의 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; 소유 확인 &lt;/mark&gt;을 누르면 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196131892-f40e6a3c-3be8-460c-b772-89d92bca1b9b.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;이렇게 등록이 완료되면, 사이트 목록에 있는 사이트 주소를 클릭해 사이트 관리 페이지로 이동한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196132997-b41182ea-3798-4b01-b9d2-70725dce92b4.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;이후 왼쪽 사이드바에 있는 요청 -&amp;gt; 웹페이지 수집을 클릭해 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; 확인 &lt;/mark&gt; 버튼을 클릭한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196133370-13ae8e37-6403-4d25-b737-ffae60d3620b.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;마지막으로 요청 -&amp;gt; 사이트맵 제출에서 다음과 같이 sitemap.xml을 추가한 뒤 &lt;mark style=&quot;background-color: #dcffe4&quot;&gt; 확인 &lt;/mark&gt; 버튼을 누르면 끝이다.&lt;/p&gt;
-
-&lt;p&gt;![image]&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;다음-검색-엔진-등록&quot;&gt;다음 검색 엔진 등록&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://register.search.daum.net/index.daum&quot;&gt;Daum 검색 등록&lt;/a&gt; 👈 다음 검색 등록은 이 링크에서 url을 입력하고 &lt;mark style=&quot;background-color: #f5f0ff&quot;&gt; 확인 &lt;/mark&gt;을 누르면 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/196975892-5ab7d91a-00e5-4392-92e0-cbb778acaf40.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197085452-d632a77a-ba34-499e-b259-d1c443a48fbb.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;서비스 이용 약관에 동의한 뒤, 몇 가지 정보만 작성하면 끝이다 👏&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197085566-97e3ebee-c434-4ca1-9601-28b5f9feed32.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;➕ 2022/10/21&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/110466566/197110043-c7ce7f23-7d97-498a-be37-6df3c9da91fb.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;center&gt;&lt;i&gt; 하루 뒤에 이메일이 와서 확인해보니 정상적으로 등록된 것을 확인할 수 있었다. &lt;/i&gt;&lt;/center&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Blog" /><summary type="html">네이버, 다음 검색 엔진 등록하는 방법 정리</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>Minseok Seo</name><email>seominseok@gm.gist.ac.kr</email></author><category term="Blog" /><summary type="html">깃허브 블로그 생성 방법 정리</summary></entry></feed>

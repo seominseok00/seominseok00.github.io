@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="/assets/styles.css"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>CARLA 0.9.15 설치 [Windows 11] | 서민석의 블로그</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="CARLA 0.9.15 설치 [Windows 11]" />
+<meta name="author" content="Minseok Seo" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="윈도우11에 CARLA 0.9.15 설치하기" />
+<meta property="og:description" content="윈도우11에 CARLA 0.9.15 설치하기" />
+<link rel="canonical" href="http://localhost:4000/carla/2024/07/09/1.CARLA-Installation-(Windows)/" />
+<meta property="og:url" content="http://localhost:4000/carla/2024/07/09/1.CARLA-Installation-(Windows)/" />
+<meta property="og:site_name" content="서민석의 블로그" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-07-09T00:00:00+09:00" />
+<meta name="google-site-verification" content="xxxxx" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/carla/2024/07/09/1.CARLA-Installation-(Windows)/"},"author":{"@type":"Person","name":"Minseok Seo"},"headline":"CARLA 0.9.15 설치 [Windows 11]","dateModified":"2024-07-09T00:00:00+09:00","datePublished":"2024-07-09T00:00:00+09:00","description":"윈도우11에 CARLA 0.9.15 설치하기","url":"http://localhost:4000/carla/2024/07/09/1.CARLA-Installation-(Windows)/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="서민석의 블로그" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5819883565965493"
+     crossorigin="anonymous"></script></head>
+
+
+  <body>
+
+    <div class="container pure-g"><div class="sidebar-left pure-u-1 pure-u-md-1-4" style="background-color: rgb(40, 73, 77); color: rgb(255, 255, 255); background-image: url(/bg.png);"><header class="masthead">
+  <div class="avatar"><img src="/zzonddeok.jpg" class="avatar-image" alt="Minseok Seo">
+    </div>
+  <div class="masthead-title">
+    <a href="/" title="Home">서민석의 블로그</a>
+  </div>
+  <div class="masthead-tagline">
+    <small></small>
+  </div><nav class="navigation">
+    <ul class="navigation-list"><li class="navigation-item">
+        <a onclick="sessionStorage.setItem('forceCheckScroll', 'true')" href="/">Blog</a>
+      </li><li class="navigation-item">
+        <a onclick="sessionStorage.setItem('forceCheckScroll', 'true')" href="/about/">About</a>
+      </li></ul>
+  </nav><div class="social pure-menu pure-menu-horizontal">
+      <ul class="social-icons pure-menu-list">
+      <li class="pure-menu-item">
+          <a class="social-icon pure-menu-link" href="mailto://seominseok@gm.gist.ac.kr">
+            <i class="fas fa-envelope" title="Email"></i>
+          </a>
+        </li><li class="pure-menu-item">
+          <a class="social-icon pure-menu-link" href="https://github.com/seominseok00">
+            <i class="fab fa-github" title="GitHub"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+</header>
+</div>
+
+      <div class="content pure-u-1 pure-u-md-1-2"><main>
+  <article class="post">
+  <h1 class="post-title">CARLA 0.9.15 설치 [Windows 11]</h1>
+  <div class="post-meta"><time datetime="2024-07-09T00:00:00+09:00" itemprop="datePublished">9 Jul 2024</time></div>
+
+  <p>이 글은 공식 문서 <a href="https://carla.readthedocs.io/en/latest/build_windows/">Windows build</a>를 자세하게 설명한 글로, 아래 포스팅들도 추가로 참고했다.</p>
+
+<p><em>블로그 글이 지워질 경우를 대비해서 아카이브 해놓았다</em></p>
+
+<ul>
+  <li><a href="http://archive.today/tN8Rh">CARLA 설치 0.9.13</a></li>
+  <li><a href="http://archive.today/S8Kch">Windows에서 make 명령어 설치 및 이용 방법</a></li>
+</ul>
+
+<p><br /></p>
+
+<p>CARLA 공식 문서는 대체적으로 설명이 잘 돼 있는 편이다.</p>
+
+<p>대체적으로..</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/a9b0b3ab-ef8b-497b-a64b-4542a3be65df" alt="image" /></p>
+
+<center>RoadRunner로 만든 맵</center>
+
+<p><br /></p>
+
+<p>RoadRunner로 만든 custom map을 빌드하기 위해 CARLA를 설치 중인데, 우분투에서 하다가 계속 에러가 발생해서 윈도우에서 설치를 진행했다.</p>
+
+<p>윈도우도 계속 에러나서 하루종일 낑낑대다가 간신히 성공해서 설치 방법과 에러 해결 과정을 정리해봤다.</p>
+
+<p><br /></p>
+
+<h3 id="system-requirements">System requirements</h3>
+
+<ul>
+  <li>64bit 시스템</li>
+  <li>165GB 이상의 저장 공간</li>
+  <li>적절한 GPU (최소 6GB 이상의 GPU 메모리)</li>
+</ul>
+
+<p><br /></p>
+
+<p>내가 설치한 환경은 다음과 같다.</p>
+
+<ul>
+  <li>Windows 11</li>
+  <li>NVIDIA GeForce GTX 1660 Super 6GB</li>
+  <li>RAM 16GB</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="software-requirements">Software requirements</h3>
+
+<ul>
+  <li>
+    <p><a href="https://cmake.org/files/">CMake</a>: 3.15 버전 이상 (나는 3.15 버전을 설치했다)</p>
+  </li>
+  <li>
+    <p><a href="https://git-scm.com/downloads">Git</a></p>
+  </li>
+  <li>
+    <p><a href="https://sourceforge.net/projects/gnuwin32/files/make/3.81/make-3.81.exe/download?use_mirror=jaist&amp;download=">Make</a></p>
+
+    <ul>
+      <li>
+        <p>Make의 경우 설치하고난 다음, 설치 경로(C:\Program Files (x86)\GnuWin32\bin)를 환경변수의 path에 추가해야 한다.</p>
+
+        <p><img src="https://github.com/seominseok00/comments/assets/110466566/f1e06c5b-3308-4a01-9a27-c99bee3dfa28" alt="image" /></p>
+      </li>
+      <li>
+        <p>이후 cmd 창에 <code class="language-plaintext highlighter-rouge">make -v</code>를 입력했을 때 다음과 같이 나오면 정상적으로 설치된 것이다.</p>
+
+        <p><img src="https://github.com/seominseok00/comments/assets/110466566/1eb521e6-326a-4533-a652-8a92185142e9" alt="image" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://www.7-zip.org/">7Zip</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.python.org/downloads/">Python3</a> (나는 3.12.4를 설치했다)</p>
+
+    <ul>
+      <li>
+        <p>파이썬을 설치하고 난 뒤, pip를 업그레이드 해주고 아래 dependencies를 설치한다.</p>
+
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 <span class="nb">install</span> <span class="nt">--upgrade</span> pip
+</code></pre></div>        </div>
+
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 <span class="nb">install</span> <span class="nt">--user</span> setuptools
+pip3 <span class="nb">install</span> <span class="nt">--user</span> wheel
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://visualstudio.microsoft.com/ko/thank-you-downloading-visual-studio/?sku=Community&amp;rel=16&amp;ref=developerinsider.co">Visual Studio 2019 Community</a></p>
+
+    <blockquote>
+      <p>❗️7/10일자로 갑자기 마이크로소프트에서 Visual Studio 2019 버전을 다운로드하는 것을 막았다.</p>
+
+      <p>2022 버전으로 동일하게 진행해 봤는데, <code class="language-plaintext highlighter-rouge">UE4.sln</code> 파일 빌드까지는 되는데, 이후 <code class="language-plaintext highlighter-rouge">make launch</code> 명령어를 실행하면</p>
+
+      <p>Visual Studio 16 2019 could not find any instance of Visual Studio 라는 에러가 발생했다.</p>
+
+      <p>그래서 Visual Studio 2019 installer를 찾아서 설치하니 해결됐다.</p>
+
+      <p>2019 버전은 <a href="https://reddit.com/r/VisualStudio/comments/q4dm0u/cant_download_visual_studio_community_19/?rdt=64735">레딧 쓰레드</a>의 댓글에 있는 링크에서 다운 받을 수 있다.</p>
+    </blockquote>
+
+    <p><br /></p>
+
+    <p>총 세 개를 설치해야 하는데,</p>
+
+    <ul>
+      <li>
+        <p><strong>C++를 사용한 데스크톱 개발</strong></p>
+
+        <p>오른쪽 설치 세부 정보에서 <strong>MSVC v140 - VS 2015 C++ 빌드 도구(v14.00)</strong> 선택</p>
+
+        <p><img src="https://github.com/seominseok00/comments/assets/110466566/b35ae8f7-6deb-4937-ad8e-a790991f5391" alt="image" /></p>
+      </li>
+      <li>
+        <p><strong>.NET 데스크톱 개발</strong></p>
+
+        <p>마찬가지로 오른쪽에서 <strong>.NET Framework 4.6.2 개발 도구</strong> 선택</p>
+
+        <p><img src="https://github.com/seominseok00/comments/assets/110466566/aa00791a-7783-44ff-b9c0-fbcf03294a44" alt="image" /></p>
+      </li>
+      <li>
+        <p><strong>C++를 사용한 게임 개발</strong></p>
+
+        <p><img src="https://github.com/seominseok00/comments/assets/110466566/1835b25f-1530-4614-a8a8-f082d420c9df" alt="image" /></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="unreal-engine">Unreal Engine</h3>
+
+<p>이제 Unreal Engine 및 CARLA 설치를 위한 준비가 끝났다.</p>
+
+<p>먼저 Unreal Engine을 설치하자.</p>
+
+<p><br /></p>
+
+<p>Unreal Engine을 git clone 하기 위해서는 Github 접근 권한을 얻어야 하는데 이 <a href="https://www.unrealengine.com/en-US/ue-on-github">문서</a>를 따라 개발자 등록을 한 뒤, git clone을 한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone <span class="nt">--depth</span> 1 <span class="nt">-b</span> carla https://github.com/CarlaUnreal/UnrealEngine.git
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>이후 clone한 폴더로 이동한 뒤, 아래 명령어를 순차적으로 실행한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>UnrealEngine
+Setup.bat
+GenerateProjectFiles.bat
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>위 명령어들이 성공적으로 수행됐다면, 다음과 같이 <code class="language-plaintext highlighter-rouge">UE4.sln</code> 파일이 생성된다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/2c328183-368e-4923-9927-c4e749f531c0" alt="image" /></p>
+
+<p><br /></p>
+
+<p>그러면 마우스 우클릭 -&gt; 연결 프로그램 -&gt; Microsoft Visual Studio 2019를 클릭해서 해당 파일을 연다. (나는 이전에 열었었기 때문에 아이콘이 다르다)</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/bb09fda6-a8f8-4e0d-b564-0017d7143e69" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이후 위쪽에 있는 툴바에서 <code class="language-plaintext highlighter-rouge">Development Editor</code>, <code class="language-plaintext highlighter-rouge">Win64</code>, <code class="language-plaintext highlighter-rouge">UnrealBuildTool</code>을 선택한 다음,</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/42291291-7092-4383-8e71-ba2b45449364" alt="image" /></p>
+
+<p><br /></p>
+
+<p>솔루션 탐색기에서 <code class="language-plaintext highlighter-rouge">UE4</code>를 우클릭하여 빌드한다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/f7bda6d1-9e3b-43c6-8ee2-f9c7d83a7b75" alt="image" /></p>
+
+<p><br /></p>
+
+<p>빌드가 정상적으로 완료되면 아래와 같이 성공 메시지가 뜨게 되고, <code class="language-plaintext highlighter-rouge">UnrealEngine\Engine\Binaries\Win64</code> 디렉토리에 <code class="language-plaintext highlighter-rouge">UE4Editor.exe</code> 파일이 생기게 된다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/70637b4c-66bb-4846-887f-f58e35baafd4" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이후 환경 변수에 가서 사용자 변수 새로 만들기를 클릭,</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/04937ec1-dac1-4395-aa2d-08327e108be8" alt="image" /></p>
+
+<p><br /></p>
+
+<p>다음과 같이 UE4_ROOT 변수를 생성해주면 Unreal Engine 설치 과정은 끝난다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/0cd0d1fe-3639-4e53-8322-5aa4a6f564f3" alt="image" /></p>
+
+<p><br /></p>
+
+<h3 id="carla">CARLA</h3>
+
+<p>CARLA 깃허브를 clone 한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/carla-simulator/carla
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>이후 clone한 폴더로 이동한 다음, 아래 명령어를 실행하여 assets을 다운 받는다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>carla
+Update.bat
+</code></pre></div></div>
+
+<p>Progress bar 같은게 안나와서 진행되고 있나 싶을텐데, 한 1시간 정도 걸렸던 것 같다.</p>
+
+<p><br /></p>
+
+<h3 id="build-carla">Build CARLA</h3>
+
+<p>이제 CARLA를 빌드할건데, 이때 주의할 점이 cmd 창이 아닌 <span style="color:red">x64 Native Tools Command Prompt for VS 2019</span>로 실행해야 한다는 점이다.</p>
+
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Windows</code> 키를 눌러 x64를 검색하면 다음과 같은 프롬프트가 나오는데, 이걸 실행한 다음 아래 프로세스를 따라하면 된다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/a10861dc-539a-4501-bcdb-038eb4a4347d" alt="image" /></p>
+
+<p><br /></p>
+
+<p>먼저 앞서 clone한 CARLA 루트 디렉토리로 이동한 다음, 아래 명령어를 실행한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\c</span>arla
+make PythonAPI
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>나는 이미 실행했기 때문에 스크린샷은 없지만 다음과 같은 에러가 발생했었다.</p>
+
+<details>
+  <summary>에러 메시지</summary>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\c</span>arla&gt;make PythonAPI
+-[BuildUE4Plugins]: <span class="o">[</span>Batch params]: <span class="nt">--build</span> <span class="nt">--all</span>
+HEAD is now at 260273d Correct descriptor
+-[BuildUE4Plugins]: STREETMAP has been successfully installed <span class="k">in</span> <span class="s2">"C:</span><span class="se">\U</span><span class="s2">sers</span><span class="se">\s</span><span class="s2">eominseok</span><span class="se">\c</span><span class="s2">arla</span><span class="se">\U</span><span class="s2">nreal</span><span class="se">\C</span><span class="s2">arlaUE4</span><span class="se">\P</span><span class="s2">lugins</span><span class="se">\"</span><span class="s2">
+-[Setup]: [Batch params]: --boost-toolset msvc-14.2 --generator "" --all
+-[Setup]: Asynchronous jobs:  16
+-[Setup]: Boost toolset:      msvc-14.2
+-[Setup]: Generator:          "</span>Visual Studio 16 2019<span class="s2">"
+-[Setup]: Install directory:  "</span>C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\c</span>arla<span class="se">\B</span>uild<span class="se">\"</span>
+-[Setup]: Installing zlib...
+    -[install_zlib]: <span class="o">[</span>Batch params]: <span class="nt">--build-dir</span> <span class="s2">"C:</span><span class="se">\U</span><span class="s2">sers</span><span class="se">\s</span><span class="s2">eominseok</span><span class="se">\c</span><span class="s2">arla</span><span class="se">\B</span><span class="s2">uild</span><span class="se">\"</span><span class="s2">
+    -[install_zlib]: Not downloading zlib because already exists the folder "</span>C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\c</span>arla<span class="se">\B</span>uild<span class="se">\z</span>lib-source<span class="se">\"</span><span class="nb">.</span>
+<span class="nt">--</span> The C compiler identification is MSVC 19.0.24247.2
+<span class="nt">--</span> Check <span class="k">for </span>working C compiler: D:/Program Files <span class="o">(</span>x86<span class="o">)</span>/Microsoft Visual Studio 14.0/VC/bin/amd64/cl.exe
+<span class="nt">--</span> Check <span class="k">for </span>working C compiler: D:/Program Files <span class="o">(</span>x86<span class="o">)</span>/Microsoft Visual Studio 14.0/VC/bin/amd64/cl.exe <span class="nt">--</span> broken
+CMake Error at C:/Program Files/CMake/share/cmake-3.15/Modules/CMakeTestCCompiler.cmake:60 <span class="o">(</span>message<span class="o">)</span>:
+  The C compiler
+
+    <span class="s2">"D:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/cl.exe"</span>
+
+  is not able to compile a simple <span class="nb">test </span>program.
+
+  It fails with the following output:
+
+    Change Dir: C:/Users/seominseok/carla/Build/zlib-source/build/CMakeFiles/CMakeTmp
+
+    Run Build Command<span class="o">(</span>s<span class="o">)</span>:nmake /nologo cmTC_41123<span class="se">\f</span>ast <span class="o">&amp;&amp;</span>       <span class="s2">"D:</span><span class="se">\P</span><span class="s2">rogram Files (x86)</span><span class="se">\M</span><span class="s2">icrosoft Visual Studio 14.0</span><span class="se">\V</span><span class="s2">C</span><span class="se">\B</span><span class="s2">IN</span><span class="se">\a</span><span class="s2">md64</span><span class="se">\n</span><span class="s2">make.exe"</span> <span class="nt">-f</span> CMakeFiles<span class="se">\c</span>mTC_41123.dir<span class="se">\b</span>uild.make /nologo <span class="nt">-L</span>                  CMakeFiles<span class="se">\c</span>mTC_41123.dir<span class="se">\b</span>uild
+    Building C object CMakeFiles/cmTC_41123.dir/testCCompiler.c.obj
+        <span class="s2">"D:</span><span class="se">\P</span><span class="s2">rogram Files (x86)</span><span class="se">\M</span><span class="s2">ICROS~1.0</span><span class="se">\V</span><span class="s2">C</span><span class="se">\b</span><span class="s2">in</span><span class="se">\a</span><span class="s2">md64</span><span class="se">\c</span><span class="s2">l.exe"</span> @C:<span class="se">\U</span>sers<span class="se">\S</span>EOMIN~1<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\T</span>emp<span class="se">\n</span>m1AC6.tmp
+    testCCompiler.c
+    Linking C executable cmTC_41123.exe
+        <span class="s2">"C:</span><span class="se">\P</span><span class="s2">rogram Files</span><span class="se">\C</span><span class="s2">Make</span><span class="se">\b</span><span class="s2">in</span><span class="se">\c</span><span class="s2">make.exe"</span> <span class="nt">-E</span> vs_link_exe <span class="nt">--intdir</span><span class="o">=</span>CMakeFiles<span class="se">\c</span>mTC_41123.dir <span class="nt">--rc</span><span class="o">=</span>rc <span class="nt">--mt</span><span class="o">=</span>CMAKE_MT-NOTFOUND <span class="nt">--manifests</span>  <span class="nt">--</span> <span class="s2">"D:</span><span class="se">\P</span><span class="s2">rogram Files (x86)</span><span class="se">\M</span><span class="s2">ICROS~1.0</span><span class="se">\V</span><span class="s2">C</span><span class="se">\b</span><span class="s2">in</span><span class="se">\a</span><span class="s2">md64</span><span class="se">\l</span><span class="s2">ink.exe"</span> /nologo @CMakeFiles<span class="se">\c</span>mTC_41123.dir<span class="se">\o</span>bjects1.rsp @C:<span class="se">\U</span>sers<span class="se">\S</span>EOMIN~1<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\T</span>emp<span class="se">\n</span>m1C3E.tmp
+    RC Pass 1: <span class="nb">command</span> <span class="s2">"rc /fo CMakeFiles</span><span class="se">\c</span><span class="s2">mTC_41123.dir/manifest.res CMakeFiles</span><span class="se">\c</span><span class="s2">mTC_41123.dir/manifest.rc"</span> failed <span class="o">(</span><span class="nb">exit </span>code 0<span class="o">)</span> with the following output:
+    지정된 파일을 찾을 수 없습니다NMAKE : fatal error U1077: <span class="s1">'"C:\Program Files\CMake\bin\cmake.exe"'</span> : <span class="s1">'0xffffffff'</span> 반 환 코드입니다.
+    Stop.
+    NMAKE : fatal error U1077: <span class="s1">'"D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\BIN\amd64\nmake.exe"'</span> : <span class="s1">'0x2'</span> 반환 코드입니다.
+    Stop.
+
+
+
+
+
+  CMake will not be able to correctly generate this project.
+Call Stack <span class="o">(</span>most recent call first<span class="o">)</span>:
+  CMakeLists.txt:4 <span class="o">(</span>project<span class="o">)</span>
+
+
+<span class="nt">--</span> Configuring incomplete, errors occurred!
+See also <span class="s2">"C:/Users/seominseok/carla/Build/zlib-source/build/CMakeFiles/CMakeOutput.log"</span><span class="nb">.</span>
+See also <span class="s2">"C:/Users/seominseok/carla/Build/zlib-source/build/CMakeFiles/CMakeError.log"</span><span class="nb">.</span>
+
+    -[install_zlib]: <span class="o">[</span>CMAKE ERROR] An error ocurred <span class="k">while </span>executing cmake command.
+    -[install_zlib]: <span class="o">[</span>CMAKE ERROR] Possible causes:
+    -[install_zlib]:                - Make sure <span class="s2">"CMake"</span> is installed.
+    -[install_zlib]:                - Make sure it is available on your Windows <span class="s2">"path"</span><span class="nb">.</span>
+    -[install_zlib]:                - Make sure you have cmake 3.12.4 or higher installed.
+    -[install_zlib]: Exiting with error...
+
+-[Setup]:
+   Ok, and error ocurred, don<span class="s1">'t panic
+   We have different platforms where you can find some help :)
+
+   - Make sure you have read the documentation:
+       http://carla.readthedocs.io/en/latest/how_to_build_on_windows/
+
+   - If the problem persists, you can ask on our Github'</span>s <span class="s2">"Building on Windows"</span> issue:
+       https://github.com/carla-simulator/carla/issues/21
+
+   - Or just use our Discord channel
+       We<span class="s1">'ll be glad to help you there :)
+       https://discord.gg/42KJdRj
+make: *** [setup] 오류 1
+</span></code></pre></div>  </div>
+
+</details>
+
+<p><br /></p>
+
+<p>처음에는 CMake 쪽에서 에러가 난 줄 알았는데, 찾아보니까 zlib이 제대로 설치가 안돼서 에러가 발생했었다는 글들이 있어서 에러 메시지를 다시 확인해보니</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-[Setup]: Installing zlib...
+    -[install_zlib]: <span class="o">[</span>Batch params]: <span class="nt">--build-dir</span> <span class="s2">"C:</span><span class="se">\U</span><span class="s2">sers</span><span class="se">\s</span><span class="s2">eominseok</span><span class="se">\c</span><span class="s2">arla</span><span class="se">\B</span><span class="s2">uild</span><span class="se">\"</span><span class="s2">
+    -[install_zlib]: Not downloading zlib because already exists the folder "</span>C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\c</span>arla<span class="se">\B</span>uild<span class="se">\z</span>lib-source<span class="se">\"</span><span class="nb">.</span>
+</code></pre></div></div>
+
+<p>나도 뭔가 zlib 설치 과정에서 문제가 생긴 것 같았다.</p>
+
+<p><br /></p>
+
+<p>CARLA Discord에서 찾아보니, 이 <a href="https://github.com/carla-simulator/carla/discussions/5351">issue</a>를 보고 해결됐다는 사람이 있어서 해보니까, 나도 에러가 더 이상 발생하지 않고 정상적으로 실행됐다.</p>
+
+<p><br /></p>
+
+<p>해결 방법은 <a href="https://drive.google.com/file/d/1Q1TJWZsTPpXfUqH1cjJrMD4neoTGHGDl/view?usp=sharing">링크</a>에 있는 파일을 다운받아 압축을 해제한 다음, <code class="language-plaintext highlighter-rouge">carla\Build</code> 폴더에 넣어주면 된다.</p>
+
+<p>이때 <code class="language-plaintext highlighter-rouge">Build</code> 폴더에는 다른 파일들을 모두 지우고, 해당 파일만 넣어준 다음 다시 <code class="language-plaintext highlighter-rouge">make PythonAPI</code> 명령어를 실행하면 된다.</p>
+
+<p><br /></p>
+
+<p>설치가 정상적으로 완료되면 다음과 같이 성공적으로 빌드가 완료됐다고 뜨게 된다.</p>
+
+<p><em>뭔가 에러 메시지 같은게 잔뜩 있는 것 같지만 실행해보니까 잘됐다</em></p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/6557737e-55a6-488e-811c-2b1a858c9f03" alt="image" /></p>
+
+<p><br /></p>
+
+<p>마지막으로 아래 명령어를 실행하면 다음과 같이 Unreal Engine이 실행된다. (모든 것이 정상적으로 수행됐다면)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make launch
+</code></pre></div></div>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/86ebf9a6-c582-45da-bb73-81aa941bdc1b" alt="image" /></p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/da410cda-f46b-4d65-9c10-40a093e8bdf9" alt="image" /></p>
+
+<p><br /></p>
+
+<p>➕</p>
+
+<p>처음에 <code class="language-plaintext highlighter-rouge">make launch</code> 명령어를 실행했을 때 아래와 같은 에러가 떴었는데 다시 실행하니 저런 메시지가 안 뜨고 정상적으로 실행됐다.</p>
+
+<p>혹시라도 아래 메시지가 뜬다면, 다시 실행해보시길..</p>
+
+<details>
+  <summary>에러 메시지</summary>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  C:/Users/seominseok/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Walker/WalkerController.cpp<span class="o">(</span>28<span class="o">)</span>: warning C4458: <span class="s1">'Character'</span> 선언은 클래스 멤버를 숨깁니다.
+  C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\U</span>nrealEngine<span class="se">\E</span>ngine<span class="se">\S</span>ource<span class="se">\R</span>untime<span class="se">\E</span>ngine<span class="se">\C</span>lasses<span class="se">\G</span>ameFramework/Controller.h<span class="o">(</span>76<span class="o">)</span>: note: <span class="s1">'AController::Character'</span> 선언을 참조하십시오.
+  C:/Users/seominseok/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Walker/WalkerController.cpp<span class="o">(</span>54<span class="o">)</span>: warning C4458: <span class="s1">'Character'</span> 선언은 클래스 멤버를 숨깁니다.
+  C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\U</span>nrealEngine<span class="se">\E</span>ngine<span class="se">\S</span>ource<span class="se">\R</span>untime<span class="se">\E</span>ngine<span class="se">\C</span>lasses<span class="se">\G</span>ameFramework/Controller.h<span class="o">(</span>76<span class="o">)</span>: note: <span class="s1">'AController::Character'</span> 선언을 참조하십시오.
+  C:/Users/seominseok/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Walker/WalkerController.cpp<span class="o">(</span>89<span class="o">)</span>: warning C4458: <span class="s1">'Character'</span> 선언은 클래스 멤버를 숨깁니다.
+  C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\U</span>nrealEngine<span class="se">\E</span>ngine<span class="se">\S</span>ource<span class="se">\R</span>untime<span class="se">\E</span>ngine<span class="se">\C</span>lasses<span class="se">\G</span>ameFramework/Controller.h<span class="o">(</span>76<span class="o">)</span>: note: <span class="s1">'AController::Character'</span> 선언을 참조하십시오.
+  C:/Users/seominseok/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Walker/WalkerController.cpp<span class="o">(</span>130<span class="o">)</span>: warning C4458: <span class="s1">'Character'</span> 선언은 클래스 멤버를 숨깁니다.
+  C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\U</span>nrealEngine<span class="se">\E</span>ngine<span class="se">\S</span>ource<span class="se">\R</span>untime<span class="se">\E</span>ngine<span class="se">\C</span>lasses<span class="se">\G</span>ameFramework/Controller.h<span class="o">(</span>76<span class="o">)</span>: note: <span class="s1">'AController::Character'</span> 선언을 참조하십시오.
+  C:/Users/seominseok/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Walker/WalkerController.cpp<span class="o">(</span>150<span class="o">)</span>: warning C4458: <span class="s1">'Character'</span> 선언은 클래스 멤버를 숨깁니다.
+  C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\U</span>nrealEngine<span class="se">\E</span>ngine<span class="se">\S</span>ource<span class="se">\R</span>untime<span class="se">\E</span>ngine<span class="se">\C</span>lasses<span class="se">\G</span>ameFramework/Controller.h<span class="o">(</span>76<span class="o">)</span>: note: <span class="s1">'AController::Character'</span> 선언을 참조하십시오.
+  C:/Users/seominseok/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Walker/WalkerController.cpp<span class="o">(</span>173<span class="o">)</span>: warning C4458: <span class="s1">'Character'</span> 선언은 클래스 멤버를 숨깁니다.
+  C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\U</span>nrealEngine<span class="se">\E</span>ngine<span class="se">\S</span>ource<span class="se">\R</span>untime<span class="se">\E</span>ngine<span class="se">\C</span>lasses<span class="se">\G</span>ameFramework/Controller.h<span class="o">(</span>76<span class="o">)</span>: note: <span class="s1">'AController::Character'</span> 선언을 참조하십시오.
+  <span class="o">[</span>1941/2311] UE4Editor-Carla.lib
+     C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\c</span>arla<span class="se">\U</span>nreal<span class="se">\C</span>arlaUE4<span class="se">\P</span>lugins<span class="se">\C</span>arla<span class="se">\I</span>ntermediate<span class="se">\B</span>uild<span class="se">\W</span>in64<span class="se">\U</span>E4Editor<span class="se">\D</span>evelopment<span class="se">\C</span>arla<span class="se">\U</span>E4Editor-Carla.lib 라이브러리 및 C:<span class="se">\U</span>sers<span class="se">\s</span>eominseok<span class="se">\c</span>arla<span class="se">\U</span>nreal<span class="se">\C</span>arlaUE4<span class="se">\P</span>lugins<span class="se">\C</span>arla<span class="se">\I</span>ntermediate<span class="se">\B</span>uild<span class="se">\W</span>in64<span class="se">\U</span>E4Editor<span class="se">\D</span>evelopment<span class="se">\C</span>arla<span class="se">\U</span>E4Editor-Carla.exp 개체를 생성하고 있습니다.
+make: <span class="k">***</span> <span class="o">[</span>CarlaUE4Editor] 오류 6
+</code></pre></div>  </div>
+
+</details>
+
+<p><br /></p>
+
+<h3 id="tip">Tip</h3>
+
+<p>마지막으로, 내가 포스팅에서 다룬 에러들말고 다양한 에러가 발생할 수 있다.</p>
+
+<p><a href="https://github.com/carla-simulator/carla/issues">Github Issue</a> 탭이나, <a href="https://discord.com/invite/8kqACuC">CARLA Discord</a> 서버에 가면 비슷한 상황을 겪은 사람들의 해결 방안을 볼 수 있다.</p>
+
+<p><br /></p>
+
+<p>깃허브 이슈 탭의 검색 성능이 별로 좋지 않기 때문에, 먼저 디스코드 서버로 가서 <code class="language-plaintext highlighter-rouge">help</code>나 <code class="language-plaintext highlighter-rouge">PLATFORMS</code> 카테고리에서 사용하고 있는 운영체제 채널로 간다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/36ac806b-6d9f-46bd-8504-4b7ce67afb32" alt="image" /></p>
+
+<p><br /></p>
+
+<p>이후  <code class="language-plaintext highlighter-rouge">ctrl + F</code>를 누르고, 에러 메시지 중에서 일부를 검색하면 이렇게 이전에 질문한 사람들의 글이 보인다.</p>
+
+<p><img src="https://github.com/seominseok00/comments/assets/110466566/c20bba33-93bf-4d5f-909d-a9ca991737ab" alt="image" /></p>
+
+<p>해당 질문의 답변들을 타고가다 보면 해결 방법을 찾을 수 있다.</p>
+
+
+  
+    <div class="post-tags-section">
+  <i class="post-tags-icon fas fa-tags"></i>
+  <ul class="post-tags"></ul>
+</div>
+
+  
+
+  
+</article>
+
+
+<aside class="related">
+  <h2>Related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/review/2024/05/11/2.speak/">
+          [리뷰] 스픽 100일 후기 (내돈내산)
+          <small><time datetime="2024-05-11T00:00:00+09:00">11 May 2024</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/review/2024/03/30/1.ipad-magic-keyboard/">
+          [리뷰] 아마존 Renewed 매직 키보드 후기
+          <small><time datetime="2024-03-30T00:00:00+09:00">30 Mar 2024</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/blog/2023/11/14/6.multiple-github-accounts/">
+          [블로그] 6.한 컴퓨터에서 깃허브 계정 여러 개 사용하기
+          <small><time datetime="2023-11-14T00:00:00+09:00">14 Nov 2023</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+
+
+<script src="https://utteranc.es/client.js"
+        repo="seominseok00/comments"
+        issue-term="pathname"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</main>
+
+<footer class="footer"><small>
+    &copy; 2022&nbsp;-&nbsp;2024 <a href="https://github.com/seominseok00/">Minseok Seo</a>. All rights reserved.
+    Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/vszhub/not-pure-poole">Not Pure Poole</a>.
+  </small>
+</footer>
+</div>
+      <div class="sidebar-right pure-u-1 pure-u-md-1-4">
+<div  class="toc-wrapper">
+  <h2 class="toc-title">Table of Contents</h2>
+    <nav class="toc-nav">
+      <ul class="toc">
+  <li><a href="#system-requirements">System requirements</a></li>
+  <li><a href="#software-requirements">Software requirements</a></li>
+  <li><a href="#unreal-engine">Unreal Engine</a></li>
+  <li><a href="#carla">CARLA</a></li>
+  <li><a href="#build-carla">Build CARLA</a></li>
+  <li><a href="#tip">Tip</a></li>
+</ul>
+
+  </nav>
+</div>
+
+</div>
+    </div>
+
+    <script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script><script>
+  function strip(str, remove) {
+    while (str.length > 0 && remove.indexOf(str.charAt(0)) != -1) {
+      str = str.substr(1);
+    }
+    while (str.length > 0 && remove.indexOf(str.charAt(str.length - 1)) != -1) {
+      str = str.substr(0, str.length - 1);
+    }
+    return str;
+  }
+
+  function scroll() {
+    console.log('scroll');
+    window.scrollTo({
+      left: 0, 
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+    sessionStorage.removeItem('forceCheckScroll');
+  }
+
+  const forceCheckScroll = sessionStorage.getItem('forceCheckScroll') === 'true';
+  const checkScroll = strip(window.location.pathname, '/') !== strip('', '/');
+
+  if (forceCheckScroll || checkScroll) {
+    const maxWidth = "(max-width: 48rem)";
+    const result = window.matchMedia(maxWidth);
+    if (result.matches) {
+      scroll();
+    } else {
+      result.addListener((match) => {
+        if (match.media == maxWidth) {
+          if (match.matches) {
+            scroll();
+          }
+        }
+      });
+    }
+  }
+</script>
+</body>
+</html>
