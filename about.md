@@ -3,4 +3,6 @@ layout: page
 title: About
 ---
 
-[쫀떡이](https://www.youtube.com/@zzonddeok)
+<br>
+
+대학원생입니다.. (00년생 아님)
