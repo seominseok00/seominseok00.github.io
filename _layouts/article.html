@@ -13,6 +13,14 @@ type: article
 
   <div class="article__content" itemprop="articleBody">{{ content }}</div>
 
+  <script src="https://utteranc.es/client.js"
+        repo="seominseok00/comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
   {%- if _sharing -%}
     <section class="article__sharing d-print-none">{%- include sharing.html -%}</section>
   {%- endif -%}
