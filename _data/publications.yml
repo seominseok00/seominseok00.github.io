@@ -2,10 +2,10 @@ main:
 
   - title: State-Dependent Lagrange Multipliers for State-Wise Safety in Constrained Reinforcement Learning
     authors: <strong>Minseok Seo</strong>, Kyunghwan Choi
-    conference_short: RiTA
+    conference_short: RiTA`
     conference: International Conference on Robot Intelligence Technology and Applications <strong>(RiTA)</strong>, 2025.
-    pdf: https://arxiv.org/pdf/2306.00988.pdf
+    pdf: assets/pdf/seo2025state.pdf
     code: https://github.com/seominseok00/SafeRL
     page: https://seominseok00.github.io/state-wise-constrained-rl
-    bibtex: https://bib.yliu.me/MICCAI23.txt
+    bibtex: assets/bibtex/seo2025state.txt
     image: ./assets/img/teaser_example_2.png

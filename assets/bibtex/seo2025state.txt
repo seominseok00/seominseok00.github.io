@@ -1,0 +1,7 @@
+@article{seo2025state,
+  title={State-Dependent Lagrange Multipliers for State-Wise Safety in Constrained Reinforcement Learning},
+  author={Seo, Minseok and Choi, Kyunghwan},
+  journal={Authorea Preprints},
+  year={2025},
+  publisher={Authorea}
+}
