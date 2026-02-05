@@ -5,7 +5,7 @@ main:
     conference_short: RiTA`
     conference: International Conference on Robot Intelligence Technology and Applications <strong>(RiTA)</strong>, 2025.
     pdf: assets/pdf/seo2025state.pdf
-    code: https://github.com/seominseok00/SafeRL
-    page: https://seominseok00.github.io/state-wise-constrained-rl
+    code: https://github.com/seo-minseok/SafeRL
+    page: https://seo-minseok.github.io/state-wise-constrained-rl
     bibtex: assets/bibtex/seo2025state.txt
     image: ./assets/img/seo2025state.png
